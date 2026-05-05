@@ -24,7 +24,31 @@
               alt="Logo"
               class="d-inline-block align-text-top evo_logo"
             />
-            <ul class="navbar-nav">
+
+            <!-- Mobile toggle button (visible <=768px) -->
+            <button
+              id="navToggle"
+              class="nav-toggle"
+              aria-expanded="false"
+              aria-controls="mobileDropdown"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-list"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+                />
+              </svg>
+            </button>
+
+            <!-- Desktop nav (kept for larger screens) -->
+            <ul class="navbar-nav desktop-nav">
               <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
               </li>
@@ -38,6 +62,18 @@
                 <a class="nav-link" href="#">Connect</a>
               </li>
             </ul>
+
+            <!-- Mobile dropdown (hidden by default) -->
+            <div id="mobileDropdown" class="mobile-dropdown" aria-hidden="true">
+              <ul class="mobile-nav">
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Games</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">News</a></li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Connect</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </nav>
       </header>
@@ -207,6 +243,46 @@
 
         const animatedElements = document.querySelectorAll(".animated");
         animatedElements.forEach((element) => observer.observe(element));
+
+        // Mobile nav toggle
+        const navToggle = document.getElementById("navToggle");
+        const mobileDropdown = document.getElementById("mobileDropdown");
+
+        function closeMobileNav() {
+          mobileDropdown.classList.remove("open");
+          navToggle.setAttribute("aria-expanded", "false");
+          mobileDropdown.setAttribute("aria-hidden", "true");
+        }
+
+        if (navToggle && mobileDropdown) {
+          navToggle.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const isOpen = mobileDropdown.classList.toggle("open");
+            navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            mobileDropdown.setAttribute(
+              "aria-hidden",
+              isOpen ? "false" : "true"
+            );
+            navToggle.classList.toggle("open", isOpen);
+          });
+
+          // Close when clicking outside
+          document.addEventListener("click", (ev) => {
+            if (mobileDropdown.classList.contains("open")) {
+              if (
+                !mobileDropdown.contains(ev.target) &&
+                !navToggle.contains(ev.target)
+              ) {
+                closeMobileNav();
+              }
+            }
+          });
+
+          // Close on resize to desktop (1024px and above)
+          window.addEventListener("resize", () => {
+            if (window.innerWidth >= 1023) closeMobileNav();
+          });
+        }
       });
     </script>
     <script

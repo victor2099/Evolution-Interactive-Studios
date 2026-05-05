@@ -83,8 +83,8 @@ table {
 
 /* logo style */
 .evo_logo {
-  width: 100px;
-  height: 100px;
+  width: 6em;
+  height: 6em;
 	margin-left: 1em;
   border-radius: 40%;
 }
@@ -98,34 +98,36 @@ table {
 	width: 80%;
 	color: transparent;
 	background-image: url('https://media.giphy.com/media/v2flhZ4XjsyhBAFbaY/giphy.gif?cid=ecf05e47yxef5az5ihy3ilprjm5ew8holseozhl8v6mlc4hf&ep=v1_gifs_search&rid=giphy.gif&ct=g');
- -webkit-background-clip: text;
+ 	-webkit-background-clip: text;
  background-clip: text;
  margin-bottom: 100px;
+ 	position: relative;
 }
 
 .studio_name_text {
-	font-size: 150px;
+	font-size: 4.5em;
 }
 
 /* button style */
-.games_btn {
+ .games_btn {
 	height: 150px;
 	width: 150px;
 	border-radius: 50%;
 	position: absolute;
-	right: 43.75%;
-	bottom: -26%;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: -80px; 
 	background-color: black;
 	font-size: 1.3em;
 	color:  rgba(205, 160, 92, 0.738);
 	border: 2px solid rgba(205, 160, 92, 0.738);
 	transition: 250ms;
+	z-index: 20;
 }
 
 .games_btn:hover {
 	color: rgb(255, 255, 255);
 	border: 2px solid rgb(199, 149, 74);
-	transform: translateY(-0.15em);
 }
 
 .btn_line {
@@ -144,15 +146,13 @@ table {
 .studio_about {
 	color:  rgb(199, 149, 74);
 	margin-left: 5.8em;
-	height: 2em;
 	margin-top: 20em;
 	font-size: 0.75em;
 	font-weight: 600;
 }
 
-.about_head{
+.about_head {
 	font-size: 2.5em;
-	text-align: left;
 	letter-spacing: 0.25rem;
 }
 
@@ -211,6 +211,7 @@ table {
 	border-radius: 0.25em;
 	transition: all 0.3s ease;
 }
+
 .playstore_link button:hover {
 	background-color: rgba(255, 255, 255, 0.85);
 	color: rgb(0, 0, 0);
@@ -237,22 +238,24 @@ table {
 	border-radius: 1%;
 	margin-bottom: 50px;
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: nowrap; /* keep items side-by-side on all screen sizes */
+	gap: 2rem;
+	align-items: flex-start;
 }
 
 .game_picture img {
 	display: block;
 	width: 100%;
-	height: 300px;
+	height: auto;
+	max-height: 300px;
+	object-fit: cover;
 } 
 
 .game_info {
 	margin-top: 2em;
-	width: 23.65em;
-	margin-left: 2.5em;
-}
-.game_info:nth-child(2) {
-	margin-left: 4em;
+	box-sizing: border-box;
+	flex: 0 0 48%; /* exactly half the container */
+	padding: 0 0.8rem; /* inner spacing instead of external margins */
 }
 
 .game_description {
@@ -276,28 +279,31 @@ table {
 	color: rgb(255, 255, 255);
 }
 
-.view_btn {
-	background-color: rgb(171, 120, 44);
-	border: none;
-	color: rgb(0, 0, 0);
-	font-size: 0.75em;
-	font-weight: 750;
-	padding: 0.5em 1em;
-	width: 8em;
-	border-radius: 0.25em;
-	transition: all 0.3s ease;
-}
-
-.view_btn:hover {
-	background-color: rgba(171, 120, 44, 0.7);
-	color: rgb(0, 0, 0);
-}
-
 .game_story {
 	margin-top: 1em;
 	font-size: 0.8em;
 	color: rgba(255, 255, 255, 0.85);
 	line-height: 2em;
+}
+
+/* Mobile: stack game items on narrow screens */
+@media (max-width: 768px) {
+	.games_display {
+		flex-direction: column;
+		flex-wrap: nowrap;
+		gap: 8px; /* 5-10px spacing between stacked items */
+		align-items: center;
+	}
+	.game_info {
+		flex: 0 0 auto;
+		width: 90%;
+		padding: 0.25rem 0;
+		box-sizing: border-box;
+	}
+	.game_picture img {
+		max-height: none;
+		height: auto;
+	}
 }
 
 /* Connect section/Footer */
@@ -329,12 +335,15 @@ table {
 	margin-left: 2.25em;
 	max-width: 50%;
 }
+
 .connect_link {
 	color: rgba(205, 160, 92, 0.95);	
 	text-decoration: none;
 	font-weight: 600;
 }
-.connect_link:hover { color: rgb(199,149,74); }
+.connect_link:hover { 
+	color: rgb(199,149,74); 
+}
 
 .connect_link svg {
 	width: 2em;
@@ -351,7 +360,7 @@ table {
 	gap: 8rem;
 	width: 100%;
 	max-width: 80%;
-  flex-wrap: wrap; 
+  flex-wrap: nowrap; 
 }
 
 .footer_col {
@@ -382,4 +391,458 @@ table {
 	font-size: 0.8em;
 	color: rgba(0, 0, 0, 0.85);
 	text-align: center;
+}
+
+/* Mobile dropdown & toggle styles */
+.nav-toggle {
+	display: none; 
+	background: transparent;
+	color: rgba(205, 160, 92, 0.95);
+	border: none;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	padding: 0.5rem;
+	margin-left: auto;
+}
+
+.mobile-dropdown {
+	position: absolute;
+	left: 0;
+	top: 4.5em;
+	width: 100%;
+	background: rgba(5,5,8,0.98);
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height 320ms ease;
+	z-index: 40;
+	box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+.mobile-dropdown.open {
+	max-height: 400px; /* enough to show items; will collapse if fewer */
+}
+.mobile-nav {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+.mobile-nav .nav-item {
+	border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.mobile-nav .nav-link {
+	display: block;
+	padding: 1rem 1.25rem;
+	color: rgba(205,160,92,0.95);
+	font-size: 1.1rem;
+}
+.mobile-nav .nav-link:hover {
+	background: rgba(255,255,255,0.02);
+}
+
+/* animate nav items when dropdown opens */
+.mobile-nav .nav-link {
+	transform: translateY(-6px);
+	opacity: 0;
+	transition: transform 260ms ease, opacity 260ms ease;
+}
+.mobile-dropdown.open .mobile-nav .nav-link {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+/* hide desktop nav on small screens and show toggle (strictly less than 768px) */
+@media (max-width: 1024px) {
+	.desktop-nav { display: none; }
+	.nav-toggle { display: flex; }
+	.evo_logo { margin-left: 0.75rem; }
+
+	/* Ensure only logo + toggle appear in the navbar */
+	.navbar .container-fluid {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
+	}
+
+	/* push toggle to the right */
+	.nav-toggle {
+		margin-left: auto;
+	}
+
+	/* hide any other navbar children explicitly */
+	.navbar .container-fluid > :not(.evo_logo):not(.nav-toggle):not(.mobile-dropdown) {
+		display: none;
+	}
+}
+
+/* ensure mobile dropdown hidden at 768px and above */
+@media (min-width: 1025px) {
+	.mobile-dropdown { 
+		display: none; 
+	}
+}
+
+/* Adjustments for small to medium screens (566px to 767px) */
+@media(min-width: 566px) and (max-width: 767px) {
+	.games_section h1 {
+		font-size: 1em;
+	}
+
+	.playstore_link {
+	margin-right: 2em;
+}
+
+.playstore_link button {
+	font-size: 0.5em;
+	padding: 1em 0.5em;
+	width: 16em;
+	border-radius: 0.5em;
+}
+
+	.connect_section h1 {
+		font-size: 1.5em;
+	}
+	
+	.connect_texts {
+	margin-top: 2em;
+  display: flex;
+	gap: 1rem;
+	width: 60%;
+	max-width: 40%;
+  flex-wrap: nowrap; 
+}
+
+.connect_links {
+	margin-top: 2em;
+	display: flex;
+	gap: 1rem;
+	width: 60%;
+	margin-left: 1em;
+	max-width: 40%;
+}
+
+.connect_link svg {
+	width: 1.5em;
+	height: 1.5em;
+}
+
+.studio_name_text {
+	font-size: 3em;
+}
+
+	.mission_text {
+	width: 22em;
+	margin-top: 1em;
+	font-size: 1.25rem;
+	line-height: 2em;
+}
+}
+
+@media (max-width: 424px) {
+	/* logo style */
+	.evo_logo {
+  width: 3em;
+  height: 3em;
+	margin-left: 1em;
+  border-radius: 40%;
+}
+
+	/* studio name adjustment */
+.about_text {
+	font-size: 1em;
+	font-weight: bold;
+}
+
+	.studio_about{
+		margin-top: 25em;
+		font-size: 0.35em;
+		letter-spacing: 0.25rem;
+		margin-left: 4em;
+	}
+
+	.studio_description {
+	margin-left: 1.5em;
+	font-size: 1rem;
+}
+
+.mission_text {
+	width: 40em;
+	max-width: 90%;
+	margin-top: 1em;
+	display: inline-block; 
+	font-size: 0.3em;
+	color: rgba(255, 255, 255, 0.85);
+	line-height: 0.5em;
+}
+
+.studio_name_text {
+	font-size: 3em;
+}
+
+.game_info {
+	margin-top: 2em;
+	box-sizing: border-box;
+	flex: 0 0 45%; /* exactly half the container */
+	padding: 0 0.6rem; /* inner spacing instead of external margins */
+}
+
+.games_display{
+	width: 95%;
+}
+
+	/* games section adjustment */
+	.games_section h1 {
+		font-size: 1em;
+	}
+
+	.playstore_link {
+	margin-right: 2em;
+}
+
+.playstore_link button {
+	font-size: 0.5em;
+	padding: 1em 0.5em;
+	width: 16em;
+	border-radius: 0.5em;
+}
+
+
+	/* Adjust footer section for smaller screens */
+	.connect_section {
+	padding-top: 2em;
+	padding-bottom: 5em;
+	margin-top: 12em;
+}
+
+	.connect_section h1 {
+		font-size: 1.5em;
+	}
+
+	/* Stack connect row and links vertically in this range */
+	.connect_row {
+		flex-direction: column;
+		align-items: center;
+		margin-left: 1.5em;
+		margin-right: 1.5em;
+	}
+
+	.connect_texts {
+	margin-top: 2em;
+  display: flex;
+	gap: 2rem;
+	width: 100%;
+	max-width: none;
+  flex-wrap: nowrap; 
+	margin-bottom: 2em;
+}
+
+.connect_links {
+	margin-top: 2em;
+	display: flex;
+	gap: 3rem;
+	width: 80%;
+	max-width: none;
+}
+
+.connect_link svg {
+	width: 1.5em;
+	height: 1.5em;
+}
+
+.studio_name_text {
+	font-size: 2em;
+}
+
+	.mission_text {
+	width: 22em;
+	margin-top: 1em;
+	font-size: 1.25rem;
+	line-height: 2em;
+}
+}
+
+/* Adjustments for very small screens (425px and below) */
+@media(min-width: 425px) and (max-width: 565px) {
+	/* logo style */
+	.evo_logo {
+  width: 3em;
+  height: 3em;
+	margin-left: 1em;
+  border-radius: 40%;
+}
+
+	/* studio name adjustment */
+.about_text {
+	font-size: 1em;
+	font-weight: bold;
+}
+
+	.studio_about{
+		margin-top: 25em;
+		font-size: 0.35em;
+		letter-spacing: 0.25rem;
+		margin-left: 4em;
+	}
+
+	.studio_description {
+	margin-left: 1.5em;
+	font-size: 1rem;
+}
+
+.mission_text {
+	width: 40em;
+	max-width: 90%;
+	margin-top: 1em;
+	display: inline-block; 
+	font-size: 0.3em;
+	color: rgba(255, 255, 255, 0.85);
+	line-height: 0.5em;
+}
+
+.studio_name_text {
+	font-size: 3em;
+}
+
+.game_info {
+	margin-top: 2em;
+	box-sizing: border-box;
+	flex: 0 0 45%; /* exactly half the container */
+	padding: 0 0.6rem; /* inner spacing instead of external margins */
+}
+
+.games_display{
+	width: 95%;
+}
+
+	/* games section adjustment */
+	.games_section h1 {
+		font-size: 1em;
+	}
+
+	.playstore_link {
+	margin-right: 2em;
+}
+
+.playstore_link button {
+	font-size: 0.5em;
+	padding: 1em 0.5em;
+	width: 16em;
+	border-radius: 0.5em;
+}
+
+
+	/* Adjust footer section for smaller screens */
+	.connect_section {
+	padding-top: 2em;
+	padding-bottom: 5em;
+	margin-top: 12em;
+}
+
+	.connect_section h1 {
+		font-size: 1.5em;
+	}
+
+	/* Stack connect row and links vertically in this range */
+	.connect_row {
+		flex-direction: column;
+		align-items: center;
+		margin-left: 1.5em;
+		margin-right: 1.5em;
+	}
+
+	.connect_texts {
+	margin-top: 2em;
+  display: flex;
+	gap: 2rem;
+	width: 90%;
+	max-width: none;
+  flex-wrap: nowrap; 
+	margin-bottom: 2em;
+}
+
+.connect_links {
+	margin-top: 2em;
+	display: flex;
+	gap: 3rem;
+	width: 80%;
+	max-width: none;
+}
+
+.connect_link svg {
+	width: 1.5em;
+	height: 1.5em;
+}
+
+.studio_name_text {
+	font-size: 2em;
+}
+
+	.mission_text {
+	width: 22em;
+	margin-top: 1em;
+	font-size: 1.25rem;
+	line-height: 2em;
+}
+}
+
+/* Adjustments for medium screens (768px to 1024px) */
+@media(min-width: 768px) and (max-width: 1024px) {
+	/* logo style */
+	.evo_logo {
+  width: 4em;
+  height: 4em;
+	margin-left: 1em;
+  border-radius: 40%;
+}
+
+	.connect_texts {
+	margin-top: 2em;
+  display: flex;
+	gap: 2rem;
+	width: 80%;
+	max-width: 50%;
+  flex-wrap: nowrap; 
+}
+
+.connect_links {
+	margin-top: 2em;
+	display: flex;
+	gap: 2rem;
+	width: 80%;
+	margin-left: 2.25em;
+	max-width: 50%;
+}
+
+.studio_name_text {
+	font-size: 3em;
+}
+
+	.mission_text {
+	width: 28em;
+	margin-top: 1em;
+	font-size: 1.25rem;
+	line-height: 2em;
+}
+
+.game_info {
+	margin-top: 2em;
+	box-sizing: border-box;
+	flex: 0 0 45%; /* exactly half the container */
+	padding: 0 0.6rem; /* inner spacing instead of external margins */
+}
+
+.games_display {
+	width: 95%;
+	margin-left: 1em;
+}
+}
+
+@media (min-width: 1440px) {
+	.mission_text {
+	width: 38em;
+	margin-top: 1em;
+	font-size: 2rem;
+	line-height: 2em;
+}
 }
