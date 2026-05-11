@@ -1,59 +1,148 @@
-/* html reset */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-html {
-	scroll-behavior: smooth;
+:root{
+  --bg: #0a0a0f;
+  --panel: rgba(18,18,22,0.6);
+  --text: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.7);
+  --accent: rgba(199,149,74,0.95);
+  --radius: 12px;
 }
 
-/* fonts */
-@font-face {
-	font-family: 'GoodTiming';
-	src: url(../fonts/good\ timing\ bd.otf) format(opentype);
+/* Base link style */
+a {
+  text-decoration: none;
+  color: var(--accent);
 }
 
-/* site background */
-.background {
-	background-color:  rgba(10,10,15,1);
-	width: 100%;
-}  
+/* Privacy page container */
+.privacy-page{
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 3.5rem 1rem;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+.privacy-panel{
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.03);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+.privacy-header{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.privacy-header h1{
+  font-family: 'GoodTiming', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.privacy-meta{
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.privacy-intro{
+  margin: 1rem 0 1.5rem 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.policy-section{
+  margin-top: 1.25rem;
+}
+
+.policy-section h2{
+  color: var(--text);
+  margin: 0 0 0.5rem 0;
+  font-size: 1.125rem;
+}
+
+.policy-section p,
+.policy-section ul{
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  margin: 0 0 1rem 0;
+}
+
+.policy-list{
+  padding-left: 1.25rem;
+}
+
+.policy-list li{
+  margin-bottom: 0.5rem;
+}
+
+.toc{
+  margin: 1rem 0 1.5rem 0;
+  display: flex;
+  gap: 0.5rem 1rem;
+  flex-wrap: wrap;
+}
+
+.toc a{
+  background: rgba(255,255,255,0.02);
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+.toc a:hover{
+  color: var(--text);
+  background: rgba(199,149,74,0.08);
+  border-color: rgba(199,149,74,0.12);
+}
+
+.privacy-footer{
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.privacy-footer .small{
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.btn-back{
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: var(--text);
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+}
+
+.btn-back:hover{
+  background: rgba(199,149,74,0.08);
+  border-color: rgba(199,149,74,0.18);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px){
+  .privacy-panel{ padding: 1.25rem; }
+  .privacy-header h1{ font-size: 1.5rem; }
+  .privacy-meta{ font-size: 0.85rem; }
+}
+
+@media (max-width: 420px){
+  .privacy-page{ padding: 2rem 0.75rem; }
+  .privacy-panel{ padding: 1rem; }
+  .toc a{ padding: 0.3rem 0.5rem; font-size: 0.85rem }
+}
