@@ -621,10 +621,6 @@ html {
 	line-height: 0.5em;
 }
 
-.studio_name_text {
-	font-size: 2.5em;
-}
-
 .game_info {
 	margin-top: 2em;
 	box-sizing: border-box;
@@ -696,7 +692,7 @@ html {
 }
 
 .studio_name_text {
-	font-size: 2em;
+	font-size: 1.5em;
 }
 
 	.mission_text {
