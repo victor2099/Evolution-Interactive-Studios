@@ -10,7 +10,7 @@ Our website is designed to connect players with our immersive worlds. It exists 
 2. **Seamless SPA Architecture:** Smooth, instantaneous navigation across different sections (Home, Games, About Us, Contact) without traditional page reloads.
 3. **Integrated Media & Vision Engines:** Built-in support for displaying game trailers, environmental concept art, and audio showcases.
 4. **Devlog & News Feed:** A dedicated space highlighting our game design updates, level progression roadmaps, and studio announcements.
-5. **Community Connection Portal:** Streamlined forms and links for player feedback, press inquiries, and collaborative opportunities.
+5. **Community Connection Portal:** Streamlined link for player feedback, press inquiries, and collaborative opportunities.
 
 ## Installation
 
@@ -20,34 +20,15 @@ Open your terminal and run the following commands:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/evolution-interactive-studios.git
+git clone https://github.com/victor2099/evolution-interactive-studios.git
 
 # Navigate into the project directory
 cd evolution-interactive-studios
-
-# Serve the site locally (using Python 3's built-in HTTP server)
-python3 -m http.server 8000
 ```
-
-Once running, open your browser and navigate to http://localhost:8000 to view the site.
+You can use Live Server to see the application live
 
 ## Usage
-The SPA is designed to be easily extensible. To add a new game to the studio's portfolio, you can simply update the main data array in the JavaScript logic.
-
-Here is a quick example of how you might initialize a new title in your js/portfolio.js file:
-
-```JavaScript
-// Initialize a new game entry for the studio showcase
-const newTitle = {
-    title: "Awakening",
-    genre: "Narrative Adventure",
-    status: "In Development",
-    description: "An expansive narrative journey featuring dynamic environmental shifts and deep storytelling."
-};
-
-// Add to the main gallery and re-render the view
-studioGallery.addGame(newTitle);
-```
+The SPA is designed to be easily extensible. To add a new game to the studio's portfolio, you can simply update the containers in the Homepage html file.
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
