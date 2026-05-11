@@ -8,13 +8,13 @@
 }
 
 /* Base link style */
-a {
+.privacy-page a {
   text-decoration: none;
   color: var(--accent);
 }
 
 /* Privacy page container */
-.privacy-page{
+.privacy-page {
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
@@ -33,66 +33,66 @@ a {
   box-shadow: 0 8px 30px rgba(0,0,0,0.6);
 }
 
-.privacy-header{
+.privacy-header {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1.25rem;
 }
 
-.privacy-header h1{
+.privacy-header h1 {
   font-family: 'GoodTiming', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
-  font-size: 2rem;
+  font-size: 4rem;
   color: var(--accent);
   letter-spacing: 0.02em;
   margin: 0;
 }
 
-.privacy-meta{
+.privacy-meta {
   color: var(--muted);
   font-size: 0.9rem;
 }
 
-.privacy-intro{
+.privacy-intro {
   margin: 1rem 0 1.5rem 0;
   color: var(--muted);
   line-height: 1.6;
 }
 
-.policy-section{
+.policy-section {
   margin-top: 1.25rem;
 }
 
-.policy-section h2{
+.policy-section h2 {
   color: var(--text);
   margin: 0 0 0.5rem 0;
   font-size: 1.125rem;
 }
 
 .policy-section p,
-.policy-section ul{
+.policy-section ul {
   color: var(--muted);
   font-size: 0.98rem;
   line-height: 1.7;
   margin: 0 0 1rem 0;
 }
 
-.policy-list{
+.policy-list {
   padding-left: 1.25rem;
 }
 
-.policy-list li{
+.policy-list li {
   margin-bottom: 0.5rem;
 }
 
-.toc{
+.toc {
   margin: 1rem 0 1.5rem 0;
   display: flex;
   gap: 0.5rem 1rem;
   flex-wrap: wrap;
 }
 
-.toc a{
+.toc a {
   background: rgba(255,255,255,0.02);
   padding: 0.35rem 0.6rem;
   border-radius: 999px;
@@ -101,13 +101,13 @@ a {
   border: 1px solid rgba(255,255,255,0.02);
 }
 
-.toc a:hover{
+.toc a:hover {
   color: var(--text);
   background: rgba(199,149,74,0.08);
   border-color: rgba(199,149,74,0.12);
 }
 
-.privacy-footer{
+.privacy-footer {
   margin-top: 1.5rem;
   display: flex;
   justify-content: space-between;
@@ -116,12 +116,12 @@ a {
   flex-wrap: wrap;
 }
 
-.privacy-footer .small{
+.privacy-footer .small {
   color: var(--muted);
   font-size: 0.9rem;
 }
 
-.btn-back{
+.btn-back {
   background: transparent;
   border: 1px solid rgba(255,255,255,0.06);
   color: var(--text);
@@ -129,19 +129,19 @@ a {
   border-radius: 6px;
 }
 
-.btn-back:hover{
+.btn-back:hover {
   background: rgba(199,149,74,0.08);
   border-color: rgba(199,149,74,0.18);
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .privacy-panel{ padding: 1.25rem; }
   .privacy-header h1{ font-size: 1.5rem; }
   .privacy-meta{ font-size: 0.85rem; }
 }
 
-@media (max-width: 420px){
+@media (max-width: 420px) {
   .privacy-page{ padding: 2rem 0.75rem; }
   .privacy-panel{ padding: 1rem; }
   .toc a{ padding: 0.3rem 0.5rem; font-size: 0.85rem }
