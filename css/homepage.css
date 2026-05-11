@@ -46,6 +46,20 @@ html {
 	scroll-behavior: smooth;
 }
 
+/* global styles */
+:root{
+  --bg: #0a0a0f;
+  --text: rgba(255,255,255,0.95);
+  --text-muted: rgba(255,255,255,0.7);
+	--gray: rgba(255,255,255,0.2);
+  --accent: rgba(199,149,74,0.95);
+	--accent-muted: rgba(199,149,74,0.7);
+	--navbar-bg: rgba(8, 8, 12, 0);
+	--footer-bg: rgba(238, 243, 243, 0.7);
+	--footer-text: rgba(0, 0, 0, 0.85);
+  --radius: 12px;
+}
+
 /* fonts */
 @font-face {
 	font-family: 'GoodTiming';
@@ -54,13 +68,13 @@ html {
 
 /* site background */
 .background {
-	background-color:  rgba(10,10,15,1);
+	background-color:  var(--bg);
 	width: 100%;
 }  
 
 /* Heading of website */
 .head {
-	color: rgba(205, 160, 92, 0.724);
+	color: var(--accent);
 	background: rgb(0,0,0);
   background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(8,8,12,1) 70%);
 	height: 40%;
@@ -70,12 +84,12 @@ html {
 
 /* navbar */
 .navbar {
-  background-color: rgba(8, 8, 12, 0);
+  background-color: var(--navbar-bg);
 	height:4.5em;
 }
 
 #brand, .nav-item .nav-link {
-  color: rgba(205, 160, 92, 0.954);
+  color: var(--accent);
 }
 
 .navbar-nav {
@@ -127,8 +141,8 @@ html {
 	bottom: -80px; 
 	background-color: black;
 	font-size: 1.3em;
-	color:  rgba(205, 160, 92, 0.738);
-	border: 2px solid rgba(205, 160, 92, 0.738);
+	color:  var(--accent-muted);
+	border: 2px solid var(--accent-muted);
 	transition: 250ms;
 	z-index: 20;
 }
@@ -139,8 +153,8 @@ html {
 }
 
 .games_btn:hover {
-	color: rgb(255, 255, 255);
-	border: 2px solid rgb(199, 149, 74);
+	color: var(--accent);
+	border: 2px solid var(--accent);
 }
 
 .btn_line {
@@ -148,17 +162,17 @@ html {
   height: 1px;
 	margin-top: 13em;
 	transition: all 0.05s ease;
-  background-color: rgba(205, 160, 92, 0.483);
+  background-color: var(--accent-muted);
 }
 
 .btn_line:hover {
-  background-color: rgba(171, 120, 44, 0.738);
+  background-color: var(--accent);
 }
 
 
 /* About Studio styling */
 .studio_about {
-	color:  rgb(199, 149, 74);
+	color:  var(--accent);
 	padding-top: 4em;
 	margin-left: 5.8em;
 	margin-top: 20em;
@@ -174,13 +188,12 @@ html {
 
 /* description section for studio */
 .about_text {
-	color: rgba(255, 255, 255, 0.85);
 	font-size: 4em;
 	font-weight: bold;
 }
 
 .studio_description {
-	color: rgba(255, 255, 255, 0.85);
+	color: var(--text);
 	margin-left: 4em;
 	opacity: 0;
 	transition: all 1s ease;
@@ -191,7 +204,6 @@ html {
 	margin-top: 1em;
 	display: inline-block; 
 	font-size: 1.4em;
-	color: rgba(255, 255, 255, 0.85);
 	line-height: 2em;
 }
 
@@ -220,8 +232,8 @@ html {
 
 .playstore_link button {
 	background-color: transparent;
-	border: 2px solid rgba(255, 255, 255, 0.85);
-	color: rgba(255, 255, 255, 0.85);
+	border: 2px solid var(--text);
+	color: var(--text);
 	font-size: 0.5em;
 	padding: 0.5em 1em;
 	width: 12em;
@@ -230,9 +242,9 @@ html {
 }
 
 .playstore_link button:hover {
-	background-color: rgba(255, 255, 255, 0.85);
-	color: rgb(0, 0, 0);
-	border: 2px solid rgba(255, 255, 255, 0.85);
+	background-color: var(--text);
+	color: var(--bg);
+	border: 2px solid var(--text);
 	transform: translateY(-0.05em);
 }
 
@@ -243,13 +255,13 @@ html {
 }
 
 .games_section h1 {
-	color: rgba(255, 255, 255, 0.85);
+	color: var(--text);
 	font-size: 2.5em;
 	margin-left: 1.5em;
 }
 
 .games_display {
-	color: rgba(255, 255, 255, 0.85);
+	color: var(--text);
 	width: 100%;
 	font-size: 1.5em;
 	border: none;
@@ -280,12 +292,12 @@ html {
 	margin-top: 1em;
 	font-size: 0.8em;
 	margin-bottom: 0;
-	color: rgb(171, 120, 44);
+	color: var(--accent-muted);
 }
 
 .game_description span {
 	float: right;
-	color: rgba(255, 255, 255, 0.2);
+	color: var(--gray);
 	font-size: 0.8em;
 	font-weight: 600;
 }
@@ -294,31 +306,31 @@ html {
 	padding-top: 0;
 	font-size: 1.5em;
 	font-weight: bold;
-	color: rgb(255, 255, 255);
+	color: var(--text);
 }
 
 .game_story {
 	margin-top: 1em;
 	font-size: 0.8em;
-	color: rgba(255, 255, 255, 0.85);
+	color: var(--text-muted);
 	line-height: 2em;
 }
 
 .view_btn {
 	margin-top: 1em;
 	padding: 0.5em 1em;
-	border: 2px solid rgb(199, 149, 74);
+	border: 2px solid var(--accent-muted);
 	border-radius: 0.25em;
 	background-color: transparent;
-	color: rgb(199, 149, 74);
+	color: var(--accent-muted);
 	font-size: 0.8em;
 	font-weight: 700;
 	transition: all 0.3s ease;
 }
 
 .view_btn:hover {
-	background-color: rgb(199, 149, 74);
-	color: rgb(0, 0, 0);
+	background-color: var(--accent);
+	color: var(--bg);
 }
 
 .press_btn {
@@ -355,11 +367,11 @@ html {
 	padding-top: 5em;
 	padding-bottom: 5em;
 	margin-top: 12em;
-	background-color: rgba(238, 243, 243, 0.7);
+	background-color: var(--footer-bg);
 }
 
 .connect_section h1 {
-	color: rgba(0, 0, 0, 0.85);
+	color: var(--footer-text);
 	margin-left: 1.5em;
 	font-size: 2.5em;
 }
@@ -381,13 +393,13 @@ html {
 }
 
 .connect_link {
-	color: rgba(205, 160, 92, 0.95);	
+	color: var(--accent);	
 	text-decoration: none;
 	font-weight: 600;
 }
 
 .connect_link:hover { 
-	color: rgb(199 ,149, 74); 
+	color: var(--accent); 
 }
 
 .connect_link svg {
@@ -429,20 +441,25 @@ html {
 .footer_col a:hover {
   color: #000; 
 }
+
 .footer_text {
 	display: block;
 	width: 100%;
-	margin: 2em 0 0;
+	margin-top: 2em;
 	font-size: 0.8em;
-	color: rgba(0, 0, 0, 0.85);
+	color: var(--footer-text);
 	text-align: center;
 }
 
-/* Mobile dropdown & toggle styles */
+
+/************************ /
+/ Responsive adjustments /
+/***********************/
+/* Mobile dropdown & toggle styles for smaller screens */
 .nav-toggle {
 	display: none; 
 	background: transparent;
-	color: rgba(205, 160, 92, 0.95);
+	color: var(--accent);
 	border: none;
 	cursor: pointer;
 	align-items: center;
@@ -463,25 +480,30 @@ html {
 	z-index: 40;
 	box-shadow: 0 6px 18px rgba(0,0,0,0.4);
 }
+
 .mobile-dropdown.open {
-	max-height: 400px; /* enough to show items; will collapse if fewer */
+	max-height: 20em; 
 }
+
 .mobile-nav {
 	display: flex;
 	flex-direction: column;
 	gap: 0;
 }
+
 .mobile-nav .nav-item {
 	border-bottom: 1px solid rgba(255,255,255,0.03);
 }
+
 .mobile-nav .nav-link {
 	display: block;
 	padding: 1rem 1.25rem;
-	color: rgba(205,160,92,0.95);
+	color: var(--accent);
 	font-size: 1.1rem;
 }
+
 .mobile-nav .nav-link:hover {
-	background: rgba(255,255,255,0.02);
+	background: rgba(255,255,255,0.03);
 }
 
 /* animate nav items when dropdown opens */
@@ -490,12 +512,13 @@ html {
 	opacity: 0;
 	transition: transform 260ms ease, opacity 260ms ease;
 }
+
 .mobile-dropdown.open .mobile-nav .nav-link {
 	transform: translateY(0);
 	opacity: 1;
 }
 
-/* hide desktop nav on small screens and show toggle (strictly less than 768px) */
+/* hide desktop nav on small screens and show toggle */
 @media (max-width: 1024px) {
 	.desktop-nav { display: none; }
 	.nav-toggle { display: flex; }
@@ -617,7 +640,6 @@ html {
 	margin-top: 1em;
 	display: inline-block; 
 	font-size: 0.3em;
-	color: rgba(255, 255, 255, 0.85);
 	line-height: 0.5em;
 }
 
@@ -737,7 +759,6 @@ html {
 	margin-top: 1em;
 	display: inline-block; 
 	font-size: 0.3em;
-	color: rgba(255, 255, 255, 0.85);
 	line-height: 0.5em;
 }
 
@@ -877,6 +898,9 @@ html {
 	width: 95%;
 	margin-left: 1em;
 }
+
+	.desktop-nav { display: none; }
+	.nav-toggle { display: flex; }
 }
 
 @media (min-width: 1440px) {
