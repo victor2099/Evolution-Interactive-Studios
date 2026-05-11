@@ -42,13 +42,17 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+html {
+	scroll-behavior: smooth;
+}
 
 /* fonts */
 @font-face {
 	font-family: 'GoodTiming';
 	src: url(../fonts/good\ timing\ bd.otf) format(opentype);
 }
-/* background */
+
+/* site background */
 .background {
 	background-color:  rgba(10,10,15,1);
 	width: 100%;
@@ -62,6 +66,7 @@ table {
 	height: 40%;
 	border: none;
 }
+
 
 /* navbar */
 .navbar {
@@ -81,13 +86,15 @@ table {
 	padding: 0.85em;
 }
 
+
 /* logo style */
 .evo_logo {
-  width: 6em;
-  height: 6em;
+  width: 3em;
+  height: 3em;
 	margin-left: 1em;
   border-radius: 40%;
 }
+
 
 /* studio name and description section */
 .studio_name {
@@ -108,6 +115,7 @@ table {
 	font-size: 4.5em;
 }
 
+
 /* button style */
  .games_btn {
 	height: 150px;
@@ -123,6 +131,11 @@ table {
 	border: 2px solid rgba(205, 160, 92, 0.738);
 	transition: 250ms;
 	z-index: 20;
+}
+.games_btn a {
+	text-decoration: none;
+	color: inherit;
+	display: block;
 }
 
 .games_btn:hover {
@@ -142,9 +155,11 @@ table {
   background-color: rgba(171, 120, 44, 0.738);
 }
 
-/* About Studio style */
+
+/* About Studio styling */
 .studio_about {
 	color:  rgb(199, 149, 74);
+	padding-top: 4em;
 	margin-left: 5.8em;
 	margin-top: 20em;
 	font-size: 0.75em;
@@ -156,13 +171,14 @@ table {
 	letter-spacing: 0.25rem;
 }
 
+
+/* description section for studio */
 .about_text {
 	color: rgba(255, 255, 255, 0.85);
 	font-size: 4em;
 	font-weight: bold;
 }
 
-/* description section for studio */
 .studio_description {
 	color: rgba(255, 255, 255, 0.85);
 	margin-left: 4em;
@@ -195,6 +211,7 @@ table {
 	}
 }
 
+/* games section styling		 */
 /* playstore button */
 .playstore_link {
 	float: right;
@@ -221,6 +238,7 @@ table {
 
 /* games display section */
 .games_section {
+	padding-top: 4em;
 	margin-top: 12em;
 }
 
@@ -238,7 +256,7 @@ table {
 	border-radius: 1%;
 	margin-bottom: 50px;
 	display: flex;
-	flex-wrap: nowrap; /* keep items side-by-side on all screen sizes */
+	flex-wrap: nowrap;
 	gap: 2rem;
 	align-items: flex-start;
 }
@@ -254,8 +272,8 @@ table {
 .game_info {
 	margin-top: 2em;
 	box-sizing: border-box;
-	flex: 0 0 48%; /* exactly half the container */
-	padding: 0 0.8rem; /* inner spacing instead of external margins */
+	flex: 0 0 48%; 
+	padding: 0 0.8rem;
 }
 
 .game_description {
@@ -286,12 +304,38 @@ table {
 	line-height: 2em;
 }
 
-/* Mobile: stack game items on narrow screens */
+.view_btn {
+	margin-top: 1em;
+	padding: 0.5em 1em;
+	border: 2px solid rgb(199, 149, 74);
+	border-radius: 0.25em;
+	background-color: transparent;
+	color: rgb(199, 149, 74);
+	font-size: 0.8em;
+	font-weight: 700;
+	transition: all 0.3s ease;
+}
+
+.view_btn:hover {
+	background-color: rgb(199, 149, 74);
+	color: rgb(0, 0, 0);
+}
+
+.press_btn {
+	margin-left: 1em;
+}
+
+.game_info a {
+	text-decoration: none;
+	color: inherit;	
+}
+
+/* Mobile sizing of games section	 */
 @media (max-width: 768px) {
 	.games_display {
 		flex-direction: column;
 		flex-wrap: nowrap;
-		gap: 8px; /* 5-10px spacing between stacked items */
+		gap: 8px;
 		align-items: center;
 	}
 	.game_info {
@@ -341,8 +385,9 @@ table {
 	text-decoration: none;
 	font-weight: 600;
 }
+
 .connect_link:hover { 
-	color: rgb(199,149,74); 
+	color: rgb(199 ,149, 74); 
 }
 
 .connect_link svg {
