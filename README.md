@@ -41,14 +41,12 @@ Here is a quick example of how you might initialize a new title in your js/portf
 const newTitle = {
     title: "Awakening",
     genre: "Narrative Adventure",
-    levels: 100,
     status: "In Development",
     description: "An expansive narrative journey featuring dynamic environmental shifts and deep storytelling."
 };
 
 // Add to the main gallery and re-render the view
 studioGallery.addGame(newTitle);
-studioGallery.render('.portfolio-container');
 ```
 
 ## License
