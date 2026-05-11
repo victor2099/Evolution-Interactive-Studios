@@ -891,9 +891,9 @@ html {
 	.connect_texts {
 	margin-top: 2em;
   display: flex;
-	gap: 2rem;
+	gap: 0.5rem;
 	width: 100%;
-	max-width: 80%;
+	max-width: none;
   flex-wrap: nowrap; 
 	margin-bottom: 2em;
 }
