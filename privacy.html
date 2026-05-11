@@ -35,6 +35,74 @@
     />
   </head>
   <body class="background">
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid justify-content-start">
+          <img
+            src="css/evo_logo-pres.jpg"
+            alt="Logo"
+            class="d-inline-block align-text-top evo_logo"
+          />
+
+          <!-- Mobile toggle button (visible <=768px) -->
+          <button
+            id="navToggle"
+            class="nav-toggle"
+            aria-expanded="false"
+            aria-controls="mobileDropdown"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-list"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+              />
+            </svg>
+          </button>
+
+          <!-- Desktop nav (kept for larger screens) -->
+          <ul class="navbar-nav desktop-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#studio_about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#games_section">Games</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#news_section">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#connect_section">Connect</a>
+            </li>
+          </ul>
+
+          <!-- Mobile dropdown (hidden by default) -->
+          <div id="mobileDropdown" class="mobile-dropdown" aria-hidden="true">
+            <ul class="mobile-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#studio_about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#games_section">Games</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#news_section">News</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#connect_section">Connect</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
     <h1>Privacy Policy</h1>
     <p>Last updated: May 11, 2026</p>
     <p>
