@@ -223,7 +223,8 @@ html {
 	}
 }
 
-/* games section styling		 */
+
+/* games section styling */
 /* playstore button */
 .playstore_link {
 	float: right;
@@ -362,6 +363,7 @@ html {
 	}
 }
 
+
 /* Connect section/Footer */
 .connect_section {
 	padding-top: 5em;
@@ -452,9 +454,6 @@ html {
 }
 
 
-/************************ /
-/ Responsive adjustments /
-/***********************/
 /* Mobile dropdown & toggle styles for smaller screens */
 .nav-toggle {
 	display: none; 
@@ -518,13 +517,15 @@ html {
 	opacity: 1;
 }
 
-/* hide desktop nav on small screens and show toggle */
+
+/************************ /
+/ Responsive adjustments for HEADER /
+/***********************/
 @media (max-width: 1024px) {
 	.desktop-nav { display: none; }
 	.nav-toggle { display: flex; }
 	.evo_logo { margin-left: 0.75rem; }
 
-	/* Ensure only logo + toggle appear in the navbar */
 	.navbar .container-fluid {
 		display: flex;
 		align-items: center;
@@ -533,26 +534,94 @@ html {
 		padding-right: 0.75rem;
 	}
 
-	/* push toggle to the right */
 	.nav-toggle {
 		margin-left: auto;
 	}
 
-	/* hide any other navbar children explicitly */
 	.navbar .container-fluid > :not(.evo_logo):not(.nav-toggle):not(.mobile-dropdown) {
 		display: none;
 	}
 }
 
-/* ensure mobile dropdown hidden at 768px and above */
 @media (min-width: 1025px) {
 	.mobile-dropdown { 
 		display: none; 
 	}
 }
 
-/* Adjustments for small to medium screens (566px to 767px) */
+
+/************************ /
+/ Responsive adjustments for OTHER SECTIONS /
+/***********************/
+/* Adjustments for large screens (1440px and above) */
+@media (min-width: 1440px) {
+	.mission_text {
+	width: 38em;
+	margin-top: 1em;
+	font-size: 2rem;
+	line-height: 2em;
+}
+}
+
+/* Adjustments for medium screens (768px to 1024px) */
+@media(min-width: 768px) and (max-width: 1024px) {
+	/* logo style */
+	.evo_logo {
+  width: 4em;
+  height: 4em;
+	margin-left: 1em;
+  border-radius: 40%;
+}
+
+/* footer style */
+	.connect_texts {
+	margin-top: 2em;
+  display: flex;
+	gap: 2rem;
+	width: 80%;
+	max-width: 50%;
+  flex-wrap: nowrap; 
+}
+
+.connect_links {
+	margin-top: 2em;
+	display: flex;
+	gap: 2rem;
+	width: 80%;
+	margin-left: 2.25em;
+	max-width: 50%;
+}
+
+/* studio name and description section */
+.studio_name_text {
+	font-size: 3em;
+}
+
+	.mission_text {
+	width: 28em;
+	margin-top: 1em;
+	font-size: 1.25rem;
+	line-height: 2em;
+}
+
+/* games section */
+.game_info {
+	margin-top: 2em;
+	box-sizing: border-box;
+	flex: 0 0 45%; 
+	padding: 0 0.6rem; 
+}
+
+.games_display {
+	width: 95%;
+	margin-left: 1em;
+}
+}
+
+
+/* Adjustments for small screens (566px to 767px) */
 @media(min-width: 566px) and (max-width: 767px) {
+	/* games section */
 	.games_section h1 {
 		font-size: 1em;
 	}
@@ -568,6 +637,7 @@ html {
 	border-radius: 0.5em;
 }
 
+	/* footer section */
 	.connect_section h1 {
 		font-size: 1.5em;
 	}
@@ -595,6 +665,7 @@ html {
 	height: 1.5em;
 }
 
+/*studio name and description section */
 .studio_name_text {
 	font-size: 3em;
 }
@@ -607,125 +678,7 @@ html {
 }
 }
 
-@media (max-width: 424px) {
-	/* logo style */
-	.evo_logo {
-  width: 3em;
-  height: 3em;
-	margin-left: 1em;
-  border-radius: 40%;
-}
-
-	/* studio name adjustment */
-.about_text {
-	font-size: 1em;
-	font-weight: bold;
-}
-
-	.studio_about{
-		margin-top: 25em;
-		font-size: 0.35em;
-		letter-spacing: 0.25rem;
-		margin-left: 4em;
-	}
-
-	.studio_description {
-	margin-left: 1.5em;
-	font-size: 1rem;
-}
-
-.mission_text {
-	width: 40em;
-	max-width: 90%;
-	margin-top: 1em;
-	display: inline-block; 
-	font-size: 0.3em;
-	line-height: 0.5em;
-}
-
-.game_info {
-	margin-top: 2em;
-	box-sizing: border-box;
-	flex: 0 0 45%; /* exactly half the container */
-	padding: 0 0.6rem; /* inner spacing instead of external margins */
-}
-
-.games_display{
-	width: 95%;
-}
-
-	/* games section adjustment */
-	.games_section h1 {
-		font-size: 1em;
-	}
-
-	.playstore_link {
-	margin-right: 2em;
-}
-
-.playstore_link button {
-	font-size: 0.5em;
-	padding: 1em 0.5em;
-	width: 16em;
-	border-radius: 0.5em;
-}
-
-
-	/* Adjust footer section for smaller screens */
-	.connect_section {
-	padding-top: 2em;
-	padding-bottom: 5em;
-	margin-top: 12em;
-}
-
-	.connect_section h1 {
-		font-size: 1.5em;
-	}
-
-	/* Stack connect row and links vertically in this range */
-	.connect_row {
-		flex-direction: column;
-		align-items: center;
-		margin-left: 1.5em;
-		margin-right: 1.5em;
-	}
-
-	.connect_texts {
-	margin-top: 2em;
-  display: flex;
-	gap: 2rem;
-	width: 100%;
-	max-width: none;
-  flex-wrap: nowrap; 
-	margin-bottom: 2em;
-}
-
-.connect_links {
-	margin-top: 2em;
-	display: flex;
-	gap: 3rem;
-	width: 80%;
-	max-width: none;
-}
-
-.connect_link svg {
-	width: 1.5em;
-	height: 1.5em;
-}
-
-.studio_name_text {
-	font-size: 1.5em;
-}
-
-	.mission_text {
-	width: 22em;
-	margin-top: 1em;
-	font-size: 1.25rem;
-	line-height: 2em;
-}
-}
-
-/* Adjustments for very small screens (425px and below) */
+/* Adjustments for smaller screens (425px to 565px) */
 @media(min-width: 425px) and (max-width: 565px) {
 	/* logo style */
 	.evo_logo {
@@ -766,17 +719,6 @@ html {
 	font-size: 3em;
 }
 
-.game_info {
-	margin-top: 2em;
-	box-sizing: border-box;
-	flex: 0 0 45%; /* exactly half the container */
-	padding: 0 0.6rem; /* inner spacing instead of external margins */
-}
-
-.games_display{
-	width: 95%;
-}
-
 	/* games section adjustment */
 	.games_section h1 {
 		font-size: 1em;
@@ -793,8 +735,18 @@ html {
 	border-radius: 0.5em;
 }
 
+.game_info {
+	margin-top: 2em;
+	box-sizing: border-box;
+	flex: 0 0 45%; 
+	padding: 0 0.6rem; 
+}
 
-	/* Adjust footer section for smaller screens */
+.games_display {
+	width: 95%;
+}
+
+	/* footer section */
 	.connect_section {
 	padding-top: 2em;
 	padding-bottom: 5em;
@@ -805,7 +757,6 @@ html {
 		font-size: 1.5em;
 	}
 
-	/* Stack connect row and links vertically in this range */
 	.connect_row {
 		flex-direction: column;
 		align-items: center;
@@ -848,66 +799,118 @@ html {
 }
 }
 
-/* Adjustments for medium screens (768px to 1024px) */
-@media(min-width: 768px) and (max-width: 1024px) {
+
+/* Adjustments for very small screens (425px and below) */
+@media (max-width: 424px) {
 	/* logo style */
 	.evo_logo {
-  width: 4em;
-  height: 4em;
+  width: 3em;
+  height: 3em;
 	margin-left: 1em;
   border-radius: 40%;
 }
 
-	.connect_texts {
-	margin-top: 2em;
-  display: flex;
-	gap: 2rem;
-	width: 80%;
-	max-width: 50%;
-  flex-wrap: nowrap; 
+	/* studio name adjustment */
+.about_text {
+	font-size: 1em;
+	font-weight: bold;
 }
 
-.connect_links {
-	margin-top: 2em;
-	display: flex;
-	gap: 2rem;
-	width: 80%;
-	margin-left: 2.25em;
-	max-width: 50%;
+	.studio_about {
+		margin-top: 25em;
+		font-size: 0.35em;
+		letter-spacing: 0.25rem;
+		margin-left: 4em;
+	}
+
+	.studio_description {
+	margin-left: 1.5em;
+	font-size: 1rem;
 }
 
 .studio_name_text {
-	font-size: 3em;
+	font-size: 1.5em;
 }
 
-	.mission_text {
-	width: 28em;
+.mission_text {
+	max-width: 90%;
+	margin-top: 1em;
+	display: inline-block; 
+	width: 22em;
 	margin-top: 1em;
 	font-size: 1.25rem;
 	line-height: 2em;
 }
 
+/* games section */
 .game_info {
 	margin-top: 2em;
 	box-sizing: border-box;
-	flex: 0 0 45%; /* exactly half the container */
-	padding: 0 0.6rem; /* inner spacing instead of external margins */
+	flex: 0 0 45%; 
+	padding: 0 0.6rem;
 }
 
 .games_display {
 	width: 95%;
-	margin-left: 1em;
 }
 
-	.desktop-nav { display: none; }
-	.nav-toggle { display: flex; }
+	.games_section h1 {
+		font-size: 1em;
+	}
+
+	.playstore_link {
+	margin-right: 2em;
 }
 
-@media (min-width: 1440px) {
-	.mission_text {
-	width: 38em;
-	margin-top: 1em;
-	font-size: 2rem;
-	line-height: 2em;
+.playstore_link button {
+	font-size: 0.5em;
+	padding: 1em 0.5em;
+	width: 16em;
+	border-radius: 0.5em;
+}
+
+
+	/* Adjust footer section */
+	.connect_section {
+	padding-top: 2em;
+	padding-bottom: 5em;
+	margin-top: 12em;
+}
+
+	.connect_section h1 {
+		font-size: 1.5em;
+	}
+
+	.connect_row {
+		flex-direction: column;
+		align-items: center;
+		margin-left: 1.5em;
+		margin-right: 1.5em;
+	}
+
+	.connect_texts {
+	margin-top: 2em;
+  display: flex;
+	gap: 2rem;
+	width: 100%;
+	max-width: none;
+  flex-wrap: nowrap; 
+	margin-bottom: 2em;
+}
+
+.connect_links {
+	margin-top: 2em;
+	display: flex;
+	gap: 3rem;
+	width: 80%;
+	max-width: none;
+}
+
+.connect_link svg {
+	width: 1.5em;
+	height: 1.5em;
 }
 }
+
+
+
