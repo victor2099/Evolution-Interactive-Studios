@@ -52,7 +52,7 @@ html {
   --text: rgba(255,255,255,0.95);
   --text-muted: rgba(255,255,255,0.7);
 	--gray: rgba(255,255,255,0.2);
-  --accent: rgba(199,149,74,0.95);
+  --accent: rgba(199,149,74);
 	--accent-muted: rgba(199,149,74,0.7);
 	--navbar-bg: rgba(8, 8, 12, 0);
 	--footer-bg: rgba(238, 243, 243, 0.7);
@@ -96,22 +96,69 @@ html {
 }
 
 
-/* navbar */
+/* Navbar */
 .navbar {
   background-color: var(--navbar-bg);
 	height:4.5em;
 }
 
 #brand, .nav-item .nav-link {
-  color: var(--accent);
+  color: var(--accent-muted);
 }
 
 .navbar-nav {
 	margin-top: 0.25em;
 	font-size: 1.15rem;
+	font-weight: 600;
 }
+
+.navbar-nav .nav-link:hover {
+	color: var(--accent);
+}
+
 .navbar .nav-item {
 	padding: 0.85em;
+}
+
+
+/* Section navbar (used for Privacy / ToC pages) */
+.section-nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 3.6rem;
+	display: flex;
+	align-items: center;
+	background: rgba(8,8,12,0.95);
+	color: var(--text);
+	z-index: 60;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.section-nav.disabled {
+	display: none;
+}
+
+.section-nav .section-nav-inner {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 0 1rem;
+}
+
+.section-back {
+	background: transparent;
+	border: none;
+	color: var(--accent);
+	font-size: 1.25rem;
+	cursor: pointer;
+}
+
+.section-title {
+	color: var(--text);
+	font-weight: 700;
+	font-size: 1rem;
 }
 
 
@@ -128,14 +175,12 @@ html {
 .studio_name {
 	font-family: 'GoodTiming';
 	margin: auto;
-	margin-top: 5em;
 	text-align: center;
 	width: 80%;
 	color: transparent;
 	background-image: url('https://media.giphy.com/media/v2flhZ4XjsyhBAFbaY/giphy.gif?cid=ecf05e47yxef5az5ihy3ilprjm5ew8holseozhl8v6mlc4hf&ep=v1_gifs_search&rid=giphy.gif&ct=g');
  	-webkit-background-clip: text;
  background-clip: text;
- margin-bottom: 100px;
  	position: relative;
 }
 
@@ -187,15 +232,15 @@ html {
 /* About Studio styling */
 .studio_about {
 	color:  var(--accent);
-	padding-top: 4em;
 	margin-left: 5.8em;
-	margin-top: 20em;
+	padding-top: 30em;
 	font-size: 0.75em;
 	font-weight: 600;
 }
 
 .about_head {
 	font-size: 2.5em;
+	padding-top: 2em;
 	letter-spacing: 0.25rem;
 }
 
@@ -294,7 +339,12 @@ html {
 	height: auto;
 	max-height: 300px;
 	object-fit: cover;
+	transition: 250ms;
 } 
+
+.game_picture img:hover {
+	max-height: 500px;
+}
 
 .game_info {
 	margin-top: 2em;
@@ -334,6 +384,7 @@ html {
 .view_btn {
 	margin-top: 1em;
 	padding: 0.5em 1em;
+	width: 8em;
 	border: 2px solid var(--accent-muted);
 	border-radius: 0.25em;
 	background-color: transparent;
@@ -348,14 +399,12 @@ html {
 	color: var(--bg);
 }
 
-.press_btn {
-	margin-left: 1em;
-}
 
 .game_info a {
 	text-decoration: none;
 	color: inherit;	
 }
+
 
 /* Mobile sizing of games section	 */
 @media (max-width: 768px) {
@@ -577,6 +626,24 @@ html {
 }
 }
 
+@media (min-width: 1025px) and (max-width:1439px) {
+	.studio_name {
+		padding-top: 12em;
+	}
+
+	.studio_name_text {
+		font-size: 2.5em;
+	}
+
+	.about_text {
+		font-size: 3em;
+	}
+
+	.studio_about {
+		padding-top: 20em;
+	}
+}
+
 /* Adjustments for medium screens (768px to 1024px) */
 @media(min-width: 768px) and (max-width: 1024px) {
 	/* logo style */
@@ -607,8 +674,21 @@ html {
 }
 
 /* studio name and description section */
+.studio_about {
+	padding-top: 20em;
+}
+
 .studio_name_text {
-	font-size: 3em;
+	font-size: 2.5em;
+}
+
+.studio_name{
+	padding-top: 4em;
+}
+
+.about_text {
+  font-size: 3em;
+  font-weight: bold;
 }
 
 	.mission_text {
@@ -680,8 +760,12 @@ html {
 }
 
 /*studio name and description section */
+.studio_name {
+	padding-top: 5em;
+}
+
 .studio_name_text {
-	font-size: 3em;
+	font-size: 2.5em;
 }
 
 	.mission_text {
@@ -696,8 +780,8 @@ html {
 @media(min-width: 425px) and (max-width: 565px) {
 	/* logo style */
 	.evo_logo {
-  width: 3em;
-  height: 3em;
+  width: 2.5em;
+  height: 2.5em;
 	margin-left: 1em;
   border-radius: 40%;
 }
@@ -708,8 +792,8 @@ html {
 	font-weight: bold;
 }
 
-	.studio_about{
-		margin-top: 25em;
+	.studio_about {
+		padding-top: 30em;
 		font-size: 0.35em;
 		letter-spacing: 0.25rem;
 		margin-left: 4em;
@@ -729,11 +813,19 @@ html {
 	line-height: 0.5em;
 }
 
+.studio_name {
+	padding-top: 12em;
+}
+
 .studio_name_text {
-	font-size: 3em;
+	font-size: 5em;
 }
 
 	/* games section adjustment */
+	.games_section {
+		margin-top: 10em;
+	}
+
 	.games_section h1 {
 		font-size: 1em;
 	}
@@ -758,6 +850,10 @@ html {
 
 .games_display {
 	width: 95%;
+}
+
+.game_description span {
+	width: 100%;
 }
 
 	/* footer section */
@@ -818,10 +914,10 @@ html {
 @media (max-width: 424px) {
 	/* logo style */
 	.evo_logo {
-  width: 3em;
-  height: 3em;
+  width: 2em;
+  height: 2em;
 	margin-left: 1em;
-  border-radius: 40%;
+  border-radius: 50%;
 }
 
 	/* studio name adjustment */
@@ -831,7 +927,7 @@ html {
 }
 
 	.studio_about {
-		margin-top: 25em;
+			padding-top: 25em;
 		font-size: 0.35em;
 		letter-spacing: 0.25rem;
 		margin-left: 4em;
@@ -842,8 +938,12 @@ html {
 	font-size: 1rem;
 }
 
+.studio_name {
+	padding-top: 10em;
+}
+
 .studio_name_text {
-	font-size: 1.5em;
+	font-size: 1.6em;
 }
 
 .mission_text {
@@ -870,6 +970,10 @@ html {
 
 	.games_section h1 {
 		font-size: 1em;
+	}
+
+	.game_description span {
+		width: 100%;
 	}
 
 	.playstore_link {

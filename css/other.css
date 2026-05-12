@@ -1,37 +1,33 @@
 :root{
-  --bg: #0a0a0f;
-  --panel: rgba(18,18,22,0.6);
-  --text: rgba(255,255,255,0.92);
-  --muted: rgba(255,255,255,0.7);
-  --accent: rgba(199,149,74,0.95);
-  --radius: 12px;
+  --bg2: #0a0a0f;
+  --panel2: rgba(18,18,22,0.6);
+  --text2: rgba(255,255,255,0.92);
+  --muted2: rgba(255,255,255,0.7);
+  --accent2: rgba(199,149,74,0.95);
+  --radius2: 12px;
 }
 
-/* Base link style */
 .privacy-page a {
   text-decoration: none;
-  color: var(--accent);
+  color: var(--accent2);
 }
 
-/* Privacy page container */
 .privacy-page {
-  background: var(--bg);
-  color: var(--text);
+  background: var(--bg2);
+  color: var(--text2);
   min-height: 100vh;
   padding: 3.5rem 1rem;
   box-sizing: border-box;
 }
 
-/* Base link style */
 .ToC-page a {
   text-decoration: none;
-  color: var(--accent);
+  color: var(--accent2);
 }
 
-/* Privacy page container */
 .ToC-page {
-  background: var(--bg);
-  color: var(--text);
+  background: var(--bg2);
+  color: var(--text2);
   min-height: 100vh;
   padding: 3.5rem 1rem;
   box-sizing: border-box;
@@ -43,7 +39,7 @@
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   border: 1px solid rgba(255,255,255,0.03);
   padding: 2.5rem;
-  border-radius: var(--radius);
+  border-radius: var(--radius2);
   box-shadow: 0 8px 30px rgba(0,0,0,0.6);
 }
 
@@ -57,19 +53,19 @@
 .privacy-header h1 {
   font-family: 'GoodTiming', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
   font-size: 4rem;
-  color: var(--accent);
+  color: var(--accent2);
   letter-spacing: 0.02em;
   margin: 0;
 }
 
 .privacy-meta {
-  color: var(--muted);
+  color: var(--muted2);
   font-size: 0.9rem;
 }
 
 .privacy-intro {
   margin: 1rem 0 1.5rem 0;
-  color: var(--muted);
+  color: var(--muted2);
   line-height: 1.6;
 }
 
@@ -78,14 +74,14 @@
 }
 
 .policy-section h2 {
-  color: var(--text);
+  color: var(--text2);
   margin: 0 0 0.5rem 0;
   font-size: 1.125rem;
 }
 
 .policy-section p,
 .policy-section ul {
-  color: var(--muted);
+  color: var(--muted2);
   font-size: 0.98rem;
   line-height: 1.7;
   margin: 0 0 1rem 0;
@@ -110,13 +106,13 @@
   background: rgba(255,255,255,0.02);
   padding: 0.35rem 0.6rem;
   border-radius: 999px;
-  color: var(--muted);
+  color: var(--muted2);
   font-size: 0.9rem;
   border: 1px solid rgba(255,255,255,0.02);
 }
 
 .toc a:hover {
-  color: var(--text);
+  color: var(--text2);
   background: rgba(199,149,74,0.08);
   border-color: rgba(199,149,74,0.12);
 }
@@ -131,21 +127,26 @@
 }
 
 .privacy-footer .small {
-  color: var(--muted);
+  color: var(--muted2);
   font-size: 0.9rem;
 }
 
-.btn-back {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.06);
-  color: var(--text);
-  padding: 0.5rem 0.9rem;
-  border-radius: 6px;
+.join_text {
+  display: block;
+	font-size: 4em;
+	font-weight: bold;
 }
 
-.btn-back:hover {
-  background: rgba(199,149,74,0.08);
-  border-color: rgba(199,149,74,0.18);
+.career_text {
+	width: 30em;
+	margin-top: 1em;
+	display: inline-block; 
+	font-size: 1.4em;
+	line-height: 2em;
+}
+
+#careers {
+  min-height: 100vh;
 }
 
 /* Responsive adjustments */
@@ -153,10 +154,19 @@
   .privacy-panel{ padding: 1.25rem; }
   .privacy-header h1{ font-size: 1.5rem; }
   .privacy-meta{ font-size: 0.85rem; }
+  .join_text{ font-size: 2em;}
+  .career_text{ 
+    font-size: 1em;
+    width: 20em;
+  }
 }
 
 @media (max-width: 420px) {
   .privacy-page{ padding: 2rem 0.75rem; }
   .privacy-panel{ padding: 1rem; }
   .toc a{ padding: 0.3rem 0.5rem; font-size: 0.85rem }
+    .career_text{ 
+    font-size: 0.6em;
+    width: 15em;
+  }
 }
