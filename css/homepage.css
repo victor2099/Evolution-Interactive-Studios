@@ -122,8 +122,8 @@ span, a {
 /* Heading of website */
 .head {
 	color: var(--accent);
+	background: transparent;
 }
-
 
 /* Navbar */
 .navbar {
@@ -197,9 +197,8 @@ span, a {
 /* studio name and description section */
 .studio_name {
 	font-family: 'GoodTiming';
-	margin: auto;
 	text-align: center;
-	width: 80%;
+	width: 100%;
 	color: transparent;
 	background-image: url('https://media.giphy.com/media/v2flhZ4XjsyhBAFbaY/giphy.gif?cid=ecf05e47yxef5az5ihy3ilprjm5ew8holseozhl8v6mlc4hf&ep=v1_gifs_search&rid=giphy.gif&ct=g');
  	-webkit-background-clip: text;
@@ -207,13 +206,9 @@ span, a {
  	position: relative;
 }
 
-.studio_name_text {
-	font-size: 4.5em;
-}
-
 
 /* button style */
- .games_btn {
+ /* .games_btn {
 	height: 150px;
 	width: 150px;
 	border-radius: 50%;
@@ -227,14 +222,15 @@ span, a {
 	border: 2px solid var(--accent-muted);
 	transition: 250ms;
 	z-index: 20;
-}
-.games_btn a {
+} */
+
+/* .games_btn a {
 	text-decoration: none;
 	color: inherit;
 	display: block;
-}
+} */
 
-.games_btn:hover {
+/* .games_btn:hover {
 	color: var(--accent);
 	border: 2px solid var(--accent);
 }
@@ -249,22 +245,14 @@ span, a {
 
 .btn_line:hover {
   background-color: var(--accent);
-}
+} */
 
 
 /* About Studio styling */
-.studio_about {
-	color:  var(--accent);
-	margin-left: 5.8em;
-	padding-top: 30em;
-	font-size: 0.75em;
-	font-weight: 600;
-}
-
 .about_head {
-	font-size: 2.5em;
-	padding-top: 2em;
-	letter-spacing: 0.25rem;
+	color:  var(--accent);
+	padding-left: 2em;
+	margin-right: auto;
 }
 
 
