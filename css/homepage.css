@@ -597,21 +597,9 @@ span, a {
 }
 
 @media (min-width: 1025px) and (max-width:1439px) {
-	.studio_name {
-		padding-top: 12em;
-	}
-
-	.studio_name_text {
-		font-size: 2.5em;
-	}
-
-	.about_text {
+	/* .about_text {
 		font-size: 3em;
-	}
-
-	.studio_about {
-		padding-top: 20em;
-	}
+	} */
 }
 
 /* Adjustments for medium screens (768px to 1024px) */
