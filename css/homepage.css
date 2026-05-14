@@ -198,7 +198,8 @@ span, a {
 /* studio name and description section */
 .studio_name {
 	width: 100%;
-  height: 100px;
+  height: 300px;
+	justify-content: center;
 	align-items: center;
  	position: relative;
 }
