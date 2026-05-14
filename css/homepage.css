@@ -198,13 +198,12 @@ span, a {
 /* studio name and description section */
 .studio_name {
 	width: 100%;
-	/* color: transparent; */
-	object-fit: cover;
+	align-items: center;
  	position: relative;
 }
 
 .studio_name img {
-	
+	object-fit: cover;
 }
 
 /* About Studio styling */
