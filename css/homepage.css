@@ -129,7 +129,6 @@ span, a {
 /* Navbar */
 .navbar {
   background-color: var(--navbar-bg);
-	height:4.5em;
 }
 
 #brand, .nav-item .nav-link {
