@@ -133,6 +133,7 @@ span, a {
 
 #brand, .nav-item .nav-link {
   color: var(--accent-muted);
+	padding: 0 1rem;
 	font-size: 0.875rem;
 	font-weight: 600;
   letter-spacing: 1.5px;
