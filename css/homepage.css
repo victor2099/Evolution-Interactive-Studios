@@ -63,8 +63,7 @@ html {
   --text: #e2e8f0;
   --text-muted: rgba(226, 232, 240, 0.75);
 	--gray: rgba(255,255,255,0.2);
-  --accent: #d29841;
-	--accent-muted: rgba(210, 152, 65, 0.75);
+  --accent: #f1b96a;
 	--footer-bg: rgba(238, 243, 243, 0.75);
 	--footer-text: rgba(0, 0, 0, 0.85);
   --radius: 12px;
@@ -135,7 +134,7 @@ span, a {
 
 /* Navbar */
 #navbar .nav-item .nav-link {
-  color: var(--accent-muted);
+  color: var(--accent);
 	padding: 0 1rem;
 	font-size: 0.875rem;
 	font-weight: 600;
@@ -143,7 +142,7 @@ span, a {
 }
 
 .navbar-nav .nav-link:hover {
-	color: var(--accent);
+	background-color: #06070b;
 }
 
 /* Section navbar (used for Privacy / ToC pages) */
