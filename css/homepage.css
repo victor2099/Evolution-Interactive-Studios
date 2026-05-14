@@ -103,7 +103,7 @@ p {
 	font-weight: 400;
 }
 
-span {
+span, a {
 	font-size: 0.875rem;
 	font-weight: 600;
 	text-transform: uppercase;
