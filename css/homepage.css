@@ -48,14 +48,14 @@ html {
 
 /* global styles */
 :root{
-  --bg: #0a0a0f;
-  --text: rgba(255,255,255,0.95);
-  --text-muted: rgba(255,255,255,0.7);
+  --bg: #0a0e17;
+  --text: #e2e8f0;
+  --text-muted: rgba(226, 232, 240, 0.75);
 	--gray: rgba(255,255,255,0.2);
-  --accent: rgba(199,149,74);
-	--accent-muted: rgba(199,149,74,0.7);
+  --accent: #d29841;
+	--accent-muted: rgba(210, 152, 65, 0.75);
 	--navbar-bg: rgba(8, 8, 12, 0);
-	--footer-bg: rgba(238, 243, 243, 0.7);
+	--footer-bg: rgba(238, 243, 243, 0.75);
 	--footer-text: rgba(0, 0, 0, 0.85);
   --radius: 12px;
 }
@@ -122,10 +122,6 @@ span, a {
 /* Heading of website */
 .head {
 	color: var(--accent);
-	background: rgb(0,0,0);
-  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(8,8,12,1) 70%);
-	height: 40%;
-	border: none;
 }
 
 
@@ -138,10 +134,6 @@ span, a {
 #brand, .nav-item .nav-link {
   color: var(--accent-muted);
 }
-
-/* .navbar-nav {
-	margin-top: 0.25em;
-} */
 
 .navbar-nav .nav-link:hover {
 	color: var(--accent);
