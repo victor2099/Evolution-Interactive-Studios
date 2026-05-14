@@ -134,7 +134,7 @@ span, a {
 }
 
 /* Navbar */
-.nav-item .nav-link {
+#navbar .nav-item .nav-link {
   color: var(--accent-muted);
 	padding: 0 2rem;
 	font-size: 0.875rem;
