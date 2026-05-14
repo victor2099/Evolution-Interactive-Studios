@@ -139,11 +139,9 @@ span, a {
   color: var(--accent-muted);
 }
 
-.navbar-nav {
+/* .navbar-nav {
 	margin-top: 0.25em;
-	font-size: 1.15rem;
-	font-weight: 600;
-}
+} */
 
 .navbar-nav .nav-link:hover {
 	color: var(--accent);
