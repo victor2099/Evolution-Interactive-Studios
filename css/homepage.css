@@ -79,6 +79,36 @@ html {
 	font-family: 'GoodTiming';
 	src: url(../fonts/good\ timing\ bd.otf) format(opentype);
 }
+h3 {
+	font-size: 1.75rem;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+h2 {
+	font-size: 2.5rem;
+	font-weight: 700;
+	line-height: 1.3;
+}
+
+h1 {
+	font-size: 3.5rem;
+	font-weight: 800;
+	line-height: 1.2;
+}
+
+p {
+	font-size: 1.125rem;
+	line-height: 1.6;
+	font-weight: 400;
+}
+
+span {
+	font-size: 0.875rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+}
 
 /* site background */
 .background {
@@ -262,8 +292,6 @@ html {
 	width: 30em;
 	margin-top: 1em;
 	display: inline-block; 
-	font-size: 1.4em;
-	line-height: 2em;
 }
 
 .visible {
