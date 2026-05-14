@@ -587,12 +587,10 @@ span, a {
 / Responsive adjustments for OTHER SECTIONS /
 /***********************/
 /* Adjustments for large screens (1440px and above) */
-@media (min-width: 1440px) {
+/* @media (min-width: 1440px) {
 	.mission_text {
 	width: 38em;
 	margin-top: 1em;
-	font-size: 2rem;
-	line-height: 2em;
 }
 }
 
@@ -600,7 +598,7 @@ span, a {
 	/* .about_text {
 		font-size: 3em;
 	} */
-}
+/* } */ 
 
 /* Adjustments for medium screens (768px to 1024px) */
 @media(min-width: 768px) and (max-width: 1024px) {
@@ -632,18 +630,6 @@ span, a {
 }
 
 /* studio name and description section */
-.studio_about {
-	padding-top: 20em;
-}
-
-.studio_name_text {
-	font-size: 2.5em;
-}
-
-.studio_name{
-	padding-top: 4em;
-}
-
 .about_text {
   font-size: 3em;
   font-weight: bold;
