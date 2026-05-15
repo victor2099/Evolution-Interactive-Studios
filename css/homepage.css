@@ -48,7 +48,7 @@ html {
 
 /* global styles */
 :root{
-  --bg: #0e111a;
+  --bg: rgb(14, 17, 26);
 	--bg-dark: #07090e;
   --text: #fafafa;
   --text-muted: rgba(226, 232, 240, 0.75);
