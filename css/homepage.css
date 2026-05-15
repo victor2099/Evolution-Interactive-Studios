@@ -214,7 +214,7 @@ a {
 	padding: 1rem 1rem;
 	border-radius: 5px;
 	border-color: var(--text);
-	background-color: transparent;
+	background-color: var(--bg-dark);
 	margin-top: 1rem;
 	color: var(--text);
 }
