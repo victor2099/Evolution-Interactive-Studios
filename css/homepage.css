@@ -59,7 +59,7 @@ html {
 
 /* global styles */
 :root{
-  --bg: #0e111b;
+  --bg: rgb(14, 17, 27);
   --text: #e2e8f0;
   --text-muted: rgba(226, 232, 240, 0.75);
 	--gray: rgba(255,255,255,0.2);
