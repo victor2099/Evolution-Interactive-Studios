@@ -1,14 +1,3 @@
-/* fonts */
-@font-face {
-	@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-  font-family: "Roboto", sans-serif;
-}
-
-@font-face {
-  font-family: "Exo 2", sans-serif;
-	src:  url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-}
-
 /* html reset */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -59,8 +48,9 @@ html {
 
 /* global styles */
 :root{
-  --bg: rgb(14, 17, 27);
-  --text: #e2e8f0;
+  --bg: #0e111a;
+	--bg-dark: #07090e;
+  --text: #fafafa;
   --text-muted: rgba(226, 232, 240, 0.75);
 	--gray: rgba(255,255,255,0.2);
   --accent: #f1b96a;
@@ -106,20 +96,24 @@ h1 {
 }
 
 p {
-	font-size: 1.125rem;
+	font-size: 1.5rem;
 	line-height: 1.6;
 	font-weight: 400;
 	font-family: "Roboto", sans-serif;
 }
 
 span, a {
-	font-size: 0.875rem;
+	font-size: 1rem;
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
 	font-family: "Roboto", sans-serif;
 }
 
+a {
+	text-decoration: none;
+	color: inherit;
+}
 /* site background */
 .background {
 	background-color:  var(--bg);
@@ -127,11 +121,6 @@ span, a {
 }  
 
 /* Heading of website */
-.nav-head {
-	background: transparent;
-	backdrop-filter: 10px;
-}
-
 /* Navbar */
 #navbar .nav-item .nav-link {
   color: var(--accent);
@@ -141,8 +130,10 @@ span, a {
   letter-spacing: 1.5px;
 }
 
-.navbar-nav .nav-link:hover {
+#navbar .navbar-nav .nav-link:hover {
 	color: var(--text);
+		transition: 350ms;
+
 }
 
 /* Section navbar (used for Privacy / ToC pages) */
@@ -157,7 +148,7 @@ span, a {
 	background: var(--bg);
 	color: var(--accent);
 	z-index: 60;
-	/* box-shadow: 0 2px 8px rgba(0,0,0,0.4); */
+	box-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
 .section-nav.disabled {
@@ -188,70 +179,82 @@ span, a {
 
 /* logo style */
 .evo_logo {
-  width: 7rem;
-  height: 5rem;
-	margin-left: 1rem;
-	border: none;
+  width: 6rem;
+  height: 4rem;
+	margin-left: 3rem;
+	margin-right: 0.5rem;
+	border-radius: 100%;
 }
 
 
 /* studio name and description section */
-.studio_name {
+#homepage .studio_name {
+  background: url(/assets/metal.jpg) no-repeat center;
+  background-size: cover;
 	width: 100%;
-  height: 600px;
-	justify-content: center;
-	align-items: center;
- 	position: relative;
+  height: 700px;
+}
+.hero_caption {
+	padding-left: 4rem;
+	padding-top: 6rem;
+	width: 35%;
+	margin-right: auto;
+	color: var(--text);
 }
 
-.studio_name img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+.hero_caption h1 {
+	font-size: 5rem;
+}
+
+.hero_caption p {
+	font-size: 1.25rem;
+}
+
+.hero_caption button {
+	padding: 1rem 1rem;
+	border-radius: 5px;
+	border-color: var(--text);
+	background-color: transparent;
+	margin-top: 1rem;
+	color: var(--text);
+}
+
+.hero_caption button:hover {
+	background-color: var(--gray);
+	transition: 350ms;
 }
 
 /* About Studio styling */
 .about_head {
 	color:  var(--accent);
-	padding-left: 2em;
-	margin-right: auto;
 }
 
 
 /* description section for studio */
-.about_text {
-	font-size: 2.5rem;
-	font-weight: 700;
-	line-height: 1.3;
-	font-family: "Exo 2";
-}
-
 .studio_description {
 	color: var(--text);
-	margin-left: 4em;
+  background: linear-gradient(0deg,rgba(14, 17, 26, 1) 60%, rgba(40, 48, 69, 1) 95%);
+	padding-left: 4rem;
+	padding-top: 8rem;
 	opacity: 0;
-	transition: all 1s ease;
 }
 
 .mission_text {
-	width: 30em;
+	width: 50ch;
 	margin-top: 1em;
-	display: inline-block; 
 }
 
 .visible {
-	animation: scroll 1s ease;
+	animation: scroll 1s ease-out;
 	opacity: 1;
 }
 
 @keyframes scroll {
   0% { 
 		opacity: 0; 
-		transform: translateX(-5%);
 	}
   100% {
 		 opacity: 1;
-		 transform: translateX(0); 
 	}
 }
 
@@ -259,112 +262,119 @@ span, a {
 /* games section styling */
 /* playstore button */
 .playstore_link {
-	float: right;
-	margin-right: 1.5em;
+float: right;	
+margin-right: 4rem;
 }
 
 .playstore_link button {
 	background-color: transparent;
-	border: 2px solid var(--text);
+	border: 1px solid var(--text);
 	color: var(--text);
-	font-size: 0.5em;
-	padding: 0.5em 1em;
-	width: 12em;
-	border-radius: 0.25em;
-	transition: all 0.3s ease;
+	font-size: 0.8em;
+	padding: 1rem 1rem;
+	width: 10rem;
+	border-radius: 5px;
+	transition: 350ms ease;
 }
 
 .playstore_link button:hover {
-	background-color: var(--text);
-	color: var(--bg);
-	border: 2px solid var(--text);
-	transform: translateY(-0.05em);
+	background-color: var(--gray);
 }
 
 /* games display section */
 .games_section {
-	padding-top: 4em;
-	margin-top: 12em;
+	padding-top: 4rem;
+	margin-top: 12rem;
 }
 
-.games_section h1 {
+.games_section h2 {
 	color: var(--text);
-	font-size: 2.5em;
-	margin-left: 1.5em;
+	margin-left: 4rem;
 }
 
 .games_display {
 	color: var(--text);
 	width: 100%;
-	font-size: 1.5em;
 	border: none;
-	border-radius: 1%;
-	margin-bottom: 50px;
+	margin-bottom: 4rem;
 	display: flex;
 	flex-wrap: nowrap;
-	gap: 2rem;
+	gap: 4rem;
 	align-items: flex-start;
 }
 
 .game_picture img {
-	display: block;
 	width: 100%;
-	height: auto;
-	max-height: 300px;
+	height: 400px;
 	object-fit: cover;
 	transition: 250ms;
 } 
 
 .game_picture img:hover {
-	max-height: 500px;
+	height: 500px;
+}
+
+.game_div {
+	padding: 1rem 1rem;
+	height: 16rem;
+	background-color: rgb(14, 19, 29);
 }
 
 .game_info {
-	margin-top: 2em;
+	width: 45%;
+	display: inline-block;
+	padding-top: 2rem;
 	box-sizing: border-box;
-	flex: 0 0 48%; 
-	padding: 0 0.8rem;
+}
+
+.game_info:hover {
+	box-shadow: 0 0 10px 5px rgba(0,0,0,0.3);
+}
+
+.games_display .game_info:nth-child(odd) {
+	margin-left: 4rem;
+}
+
+.games_display .game_info:nth-child(even) {
+	margin-right: 4rem;
 }
 
 .game_description {
 	margin-top: 1em;
-	font-size: 0.8em;
-	margin-bottom: 0;
-	color: var(--accent-muted);
+	font-size: 1em;
+	color: var(--accent);
 }
 
 .game_description span {
 	float: right;
 	color: var(--gray);
-	font-size: 0.8em;
-	font-weight: 600;
+	font-size: 1em;
 }
 
 .game_title {
-	padding-top: 0;
 	font-size: 1.5em;
 	font-weight: bold;
 	color: var(--text);
 }
 
 .game_story {
-	margin-top: 1em;
-	font-size: 0.8em;
+	width: 98%;
+	padding: 0.5rem 0;
+	font-size: 1rem;
 	color: var(--text-muted);
-	line-height: 2em;
+	line-height: 2rem;
 }
 
 .view_btn {
-	margin-top: 1em;
-	padding: 0.5em 1em;
-	width: 8em;
-	border: 2px solid var(--accent-muted);
-	border-radius: 0.25em;
+	margin-top: 1rem;
+	padding: 0.5rem 1rem;
+	width: 8rem;
+	border: 2px solid var(--accent);
+	border-radius: 5px;
 	background-color: transparent;
-	color: var(--accent-muted);
-	font-size: 0.8em;
-	font-weight: 700;
-	transition: all 0.3s ease;
+	color: var(--accent);
+	font-size: 0.8rem;
+	transition: 0.3s ease;
 }
 
 .view_btn:hover {
@@ -372,21 +382,19 @@ span, a {
 	color: var(--bg);
 }
 
-
-.game_info a {
-	text-decoration: none;
-	color: inherit;	
-}
-
-
 /* Mobile sizing of games section	 */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 	.games_display {
 		flex-direction: column;
 		flex-wrap: nowrap;
-		gap: 8px;
 		align-items: center;
+		margin-top: 2rem;
 	}
+
+	#games_section .games_display .game_info {
+	margin: auto;
+  }
+
 	.game_info {
 		flex: 0 0 auto;
 		width: 90%;
@@ -394,67 +402,54 @@ span, a {
 		box-sizing: border-box;
 	}
 	.game_picture img {
-		max-height: none;
-		height: auto;
+		height: 600px;
 	}
 }
 
 
 /* Connect section/Footer */
 .connect_section {
-	padding-top: 5em;
-	padding-bottom: 5em;
-	margin-top: 12em;
-	background-color: var(--footer-bg);
-}
-
-.connect_section h1 {
-	color: var(--footer-text);
-	margin-left: 1.5em;
-	font-size: 2.5em;
+	padding: 2rem 8rem;
+	margin-top: 15rem;
+	background-color: var(--bg-dark);
+	color: var(--text);
 }
 
 .connect_row {
-	margin-left: 1.5em;
-	margin-right: 1.5em;
 	display: flex;
 	align-items: flex-start;
 }
 
 .connect_links {
-	margin-top: 2em;
+	padding-top: 2rem;
 	display: flex;
 	gap: 4rem;
 	width: 100%;
-	margin-left: 2.25em;
+	padding-left: 3rem;
 	max-width: 50%;
 }
 
 .connect_link {
 	color: var(--accent);	
-	text-decoration: none;
-	font-weight: 600;
 }
 
 .connect_link:hover { 
-	color: var(--accent); 
+	color: var(--text); 
 }
 
 .connect_link svg {
-	width: 2em;
-	height: 2em;
+	width: 3rem;
+	height: 3rem;
 	transition: transform 150ms ease;
 }
+
 .connect_link:hover svg {
 	transform: scale(1.15);
 }
 
 .connect_texts {
-	margin-top: 2em;
   display: flex;
-	gap: 8rem;
-	width: 100%;
-	max-width: 80%;
+	gap: 4rem;
   flex-wrap: nowrap; 
 }
 
@@ -464,20 +459,13 @@ span, a {
   gap: 12px; 
 }
 
-.col_title {
-  font-weight: bold;
-  margin-bottom: 8px; 
-  text-transform: uppercase;
-}
-
 .footer_col a {
-  text-decoration: none;
-  color: #333; 
+  color: var(--text-muted); 
   transition: color 0.2s ease-in-out;
 }
 
 .footer_col a:hover {
-  color: #000; 
+  color: var(--text); 
 }
 
 .footer_text {
@@ -485,7 +473,7 @@ span, a {
 	width: 100%;
 	margin-top: 2em;
 	font-size: 0.8em;
-	color: var(--footer-text);
+	color: var(--text);
 	text-align: center;
 }
 
@@ -517,7 +505,7 @@ span, a {
 }
 
 .mobile-dropdown.open {
-	max-height: 20em; 
+	max-height: 60rem; 
 }
 
 .mobile-nav {
@@ -527,6 +515,7 @@ span, a {
 }
 
 .mobile-nav .nav-item {
+	padding: 2rem;
 	border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 
@@ -534,7 +523,7 @@ span, a {
 	display: block;
 	padding: 1rem 1.25rem;
 	color: var(--accent);
-	font-size: 1.1rem;
+	font-size: 1.2rem;
 }
 
 .mobile-nav .nav-link:hover {
@@ -560,8 +549,6 @@ span, a {
 @media (max-width: 1024px) {
 	.desktop-nav { display: none; }
 	.nav-toggle { display: flex; }
-	.evo_logo { margin-left: 0.75rem; }
-
 	.navbar .container-fluid {
 		display: flex;
 		align-items: center;
@@ -589,73 +576,40 @@ span, a {
 /************************ /
 / Responsive adjustments for OTHER SECTIONS /
 /***********************/
-/* Adjustments for large screens (1440px and above) */
-/* @media (min-width: 1440px) {
-	.mission_text {
-	width: 38em;
-	margin-top: 1em;
-}
-}
-
-@media (min-width: 1025px) and (max-width:1439px) {
-	/* .about_text {
-		font-size: 3em;
-	} */
-/* } */ 
-
 /* Adjustments for medium screens (768px to 1024px) */
 @media(min-width: 768px) and (max-width: 1024px) {
-	/* logo style */
-	.evo_logo {
-  width: 4em;
-  height: 4em;
-	margin-left: 1em;
-  border-radius: 40%;
-}
-
 /* footer style */
+  .connect_section {
+		padding-left: 1rem;
+	}
+
 	.connect_texts {
-	margin-top: 2em;
-  display: flex;
+	margin-top: 2rem;
 	gap: 2rem;
-	width: 80%;
-	max-width: 50%;
-  flex-wrap: nowrap; 
+	width: 50%;
 }
 
 .connect_links {
-	margin-top: 2em;
-	display: flex;
 	gap: 2rem;
-	width: 80%;
-	margin-left: 2.25em;
-	max-width: 50%;
+	margin-left: 2.25rem;
+	width: 50%;
 }
 
 /* studio name and description section */
 .about_text {
-  font-size: 3em;
+  font-size: 3rem;
   font-weight: bold;
 }
 
 	.mission_text {
-	width: 28em;
-	margin-top: 1em;
-	font-size: 1.25rem;
+	width: 28rem;
+	margin-top: 1rem;
 	line-height: 2em;
-}
-
-/* games section */
-.game_info {
-	margin-top: 2em;
-	box-sizing: border-box;
-	flex: 0 0 45%; 
-	padding: 0 0.6rem; 
 }
 
 .games_display {
 	width: 95%;
-	margin-left: 1em;
+	margin-left: 1rem;
 }
 }
 
@@ -663,63 +617,57 @@ span, a {
 /* Adjustments for small screens (566px to 767px) */
 @media(min-width: 566px) and (max-width: 767px) {
 	/* games section */
-	.games_section h1 {
-		font-size: 1em;
+	.games_section h2 {
+		font-size: 1.5rem;
 	}
 
 	.playstore_link {
-	margin-right: 2em;
+	margin-right: 2rem;
 }
 
 .playstore_link button {
-	font-size: 0.5em;
-	padding: 1em 0.5em;
-	width: 16em;
-	border-radius: 0.5em;
+	font-size: 0.6rem;
+	width: 8rem;
 }
 
 	/* footer section */
-	.connect_section h1 {
-		font-size: 1.5em;
+	#connect_section h2 {
+		font-size: 2rem;
 	}
 	
-	.connect_texts {
-	margin-top: 2em;
-  display: flex;
-	gap: 1rem;
-	width: 60%;
-	max-width: 40%;
-  flex-wrap: nowrap; 
-}
+	.connect_row {
+		flex-direction: column;
+		align-items: center;
+	}
 
-.connect_links {
-	margin-top: 2em;
-	display: flex;
-	gap: 1rem;
-	width: 60%;
-	margin-left: 1em;
-	max-width: 40%;
-}
+	.connect_links {
+		gap: 1rem;
+		padding-left: 1rem;
+	}
 
 .connect_link svg {
-	width: 1.5em;
-	height: 1.5em;
+	width: 2rem;
+	height: 2rem;
+}
+
+.connect_texts {
+	margin-top: 2rem;
 }
 
 /*studio name and description section */
-.studio_name {
-	padding-top: 5em;
+.hero_caption {
+	width: 50%;
 }
 
-.studio_name_text {
-	font-size: 2.5em;
+.hero_caption h1 {
+	font-size: 3rem;
 }
 
 	.mission_text {
-	width: 22em;
-	margin-top: 1em;
+	width: 25rem;
+	margin-top: 2rem;
 	font-size: 1.25rem;
-	line-height: 2em;
+	line-height: 2rem;
 }
 }
 
@@ -727,41 +675,35 @@ span, a {
 @media(min-width: 425px) and (max-width: 565px) {
 	/* logo style */
 	.evo_logo {
-  width: 2.5em;
-  height: 2.5em;
+  width: 2.5rem;
+  height: 2.5rem;
 	margin-left: 1em;
-  border-radius: 40%;
 }
 
 	/* studio name adjustment */
-.about_text {
-	font-size: 1em;
-	font-weight: bold;
+	.hero_caption {
+	padding-left: 1rem;
+	width: 50%;
 }
 
-	.studio_about {
-		padding-top: 30em;
-		font-size: 0.35em;
-		letter-spacing: 0.25rem;
-		margin-left: 4em;
-	}
+.hero_caption h1 {
+	font-size: 3rem;
+}
+
+.about_text {
+	font-size: 2rem;
+}
 
 	.studio_description {
-	margin-left: 1.5em;
 	font-size: 1rem;
+	padding-left: 1rem;
 }
 
 .mission_text {
-	width: 40em;
-	max-width: 90%;
-	margin-top: 1em;
-	display: inline-block; 
-	font-size: 0.3em;
-	line-height: 0.5em;
-}
-
-.studio_name {
-	padding-top: 12em;
+	width: 20rem;
+	margin-top: 1rem;
+	font-size: 1rem;
+	line-height: 2rem;
 }
 
 .studio_name_text {
@@ -770,29 +712,28 @@ span, a {
 
 	/* games section adjustment */
 	.games_section {
-		margin-top: 10em;
+		margin-top: 10rem;
 	}
 
-	.games_section h1 {
-		font-size: 1em;
+	.games_section h2 {
+		font-size: 1.5rem;
+		margin-left: 1rem;
 	}
 
 	.playstore_link {
-	margin-right: 2em;
+	margin-right: 2rem;
 }
 
 .playstore_link button {
-	font-size: 0.5em;
-	padding: 1em 0.5em;
-	width: 16em;
-	border-radius: 0.5em;
+	font-size: 0.5rem;
+	padding: 0.75rem 0.5rem;
+	width: 6rem;
+	border-radius: 0.5rem;
 }
 
 .game_info {
-	margin-top: 2em;
+	margin-top: 2rem;
 	box-sizing: border-box;
-	flex: 0 0 45%; 
-	padding: 0 0.6rem; 
 }
 
 .games_display {
@@ -800,39 +741,44 @@ span, a {
 }
 
 .game_description span {
+	margin-top: 1rem;
 	width: 100%;
+}
+
+.game_div {
+	height: 400px;
 }
 
 	/* footer section */
 	.connect_section {
-	padding-top: 2em;
-	padding-bottom: 5em;
-	margin-top: 12em;
+	padding: 2rem 0;
+	padding-bottom: 5rem;
+	margin-top: 12rem;
+	font-size: 0.5rem;
 }
 
-	.connect_section h1 {
-		font-size: 1.5em;
+	.connect_section h2 {
+		font-size: 1.5rem;
+		padding-left: 4rem;
 	}
 
 	.connect_row {
 		flex-direction: column;
 		align-items: center;
-		margin-left: 1.5em;
-		margin-right: 1.5em;
+
 	}
 
 	.connect_texts {
-	margin-top: 2em;
+	margin-top: 2rem;
   display: flex;
 	gap: 2rem;
 	width: 90%;
 	max-width: none;
   flex-wrap: nowrap; 
-	margin-bottom: 2em;
+	margin-bottom: 2rem;
 }
 
 .connect_links {
-	margin-top: 2em;
 	display: flex;
 	gap: 3rem;
 	width: 80%;
@@ -840,19 +786,8 @@ span, a {
 }
 
 .connect_link svg {
-	width: 1.5em;
-	height: 1.5em;
-}
-
-.studio_name_text {
-	font-size: 2em;
-}
-
-	.mission_text {
-	width: 22em;
-	margin-top: 1em;
-	font-size: 1.25rem;
-	line-height: 2em;
+	width: 1.5rem;
+	height: 1.5rem;
 }
 }
 
@@ -861,110 +796,119 @@ span, a {
 @media (max-width: 424px) {
 	/* logo style */
 	.evo_logo {
-  width: 2em;
-  height: 2em;
-	margin-left: 1em;
-  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+	margin-left: 1rem;
 }
 
 	/* studio name adjustment */
-.about_text {
-	font-size: 1em;
-	font-weight: bold;
+	.hero_caption {
+	padding-left: 1rem;
+	width: 80%;
 }
 
-	.studio_about {
-			padding-top: 25em;
-		font-size: 0.35em;
-		letter-spacing: 0.25rem;
-		margin-left: 4em;
-	}
+.hero_caption h1 {
+	font-size: 2.5rem;
+}
 
-	.studio_description {
-	margin-left: 1.5em;
+.about_text {
 	font-size: 1rem;
 }
 
-.studio_name {
-	padding-top: 10em;
-}
-
-.studio_name_text {
-	font-size: 1.6em;
+	.studio_description {
+	font-size: 0.5rem;
+	padding-left: 1rem;
 }
 
 .mission_text {
-	max-width: 90%;
-	margin-top: 1em;
-	display: inline-block; 
-	width: 22em;
-	margin-top: 1em;
-	font-size: 1.25rem;
-	line-height: 2em;
+	width: 15rem;
+	margin-top: 1rem;
+	font-size: 1rem;
+	line-height: 2rem;
+}
+
+.studio_name_text {
+	font-size: 5em;
 }
 
 /* games section */
+	.games_section {
+		margin-top: 10rem;
+	}
+
+	.games_section h2 {
+		font-size: 1rem;
+		margin-left: 1rem;
+	}
+
+	.playstore_link {
+	margin-right: 2rem;
+}
+
+.playstore_link button {
+	font-size: 0.45rem;
+	padding: 0.5rem 0.5rem;
+	width: 6rem;
+	border-radius: 5px;
+}
+
 .game_info {
-	margin-top: 2em;
+	margin-top: 2rem;
 	box-sizing: border-box;
-	flex: 0 0 45%; 
-	padding: 0 0.6rem;
+}
+
+.game_story {
+	font-size: 0.8rem;
+	line-height: 1rem;
 }
 
 .games_display {
 	width: 95%;
 }
 
-	.games_section h1 {
-		font-size: 1em;
-	}
-
-	.game_description span {
-		width: 100%;
-	}
-
-	.playstore_link {
-	margin-right: 2em;
+.game_description span {
+	margin-top: 1rem;
+	width: 100%;
 }
 
-.playstore_link button {
-	font-size: 0.5em;
-	padding: 1em 0.5em;
-	width: 16em;
-	border-radius: 0.5em;
+.game_div {
+	height: 400px;
 }
-
 
 	/* Adjust footer section */
 	.connect_section {
-	padding-top: 2em;
-	padding-bottom: 5em;
-	margin-top: 12em;
-}
+	padding: 2rem 0;
+	padding-bottom: 5rem;
+	margin-top: 12rem;
+	}
 
-	.connect_section h1 {
-		font-size: 1.5em;
+	.footer_col a, .col_title {
+		font-size: 0.5rem;
+	}
+
+
+	.connect_section h2 {
+		font-size: 1.5rem;
+		padding-left: 3.5rem;
 	}
 
 	.connect_row {
 		flex-direction: column;
 		align-items: center;
-		margin-left: 1.5em;
-		margin-right: 1.5em;
+
 	}
 
 	.connect_texts {
-	margin-top: 2em;
+	padding-left: 4rem;
+	margin-top: 2rem;
   display: flex;
 	gap: 0.5rem;
 	width: 100%;
 	max-width: none;
-  flex-wrap: nowrap; 
-	margin-bottom: 2em;
+	margin-bottom: 2rem;
 }
 
 .connect_links {
-	margin-top: 2em;
 	display: flex;
 	gap: 3rem;
 	width: 80%;
@@ -972,8 +916,8 @@ span, a {
 }
 
 .connect_link svg {
-	width: 1.5em;
-	height: 1.5em;
+	width: 1rem;
+	height: 1rem;
 }
 }
 

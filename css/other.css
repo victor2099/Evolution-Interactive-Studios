@@ -33,7 +33,7 @@
   box-sizing: border-box;
 }
 
-.privacy-panel{
+.privacy-panel {
   max-width: 900px;
   margin: 0 auto;
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
