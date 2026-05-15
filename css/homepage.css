@@ -59,7 +59,7 @@ html {
 
 /* global styles */
 :root{
-  --bg: #0e111a;
+  --bg: #0e111b;
   --text: #e2e8f0;
   --text-muted: rgba(226, 232, 240, 0.75);
 	--gray: rgba(255,255,255,0.2);
@@ -142,7 +142,7 @@ span, a {
 }
 
 .navbar-nav .nav-link:hover {
-	background-color: #06070b;
+	color: var(--text);
 }
 
 /* Section navbar (used for Privacy / ToC pages) */
@@ -155,7 +155,7 @@ span, a {
 	display: flex;
 	align-items: center;
 	background: var(--bg);
-	color: var(--text);
+	color: var(--accent);
 	z-index: 60;
 	/* box-shadow: 0 2px 8px rgba(0,0,0,0.4); */
 }
@@ -188,10 +188,10 @@ span, a {
 
 /* logo style */
 .evo_logo {
-  width: 2rem;
-  height: 2rem;
+  width: 7rem;
+  height: 5rem;
 	margin-left: 1rem;
-  border-radius: 50%;
+	border: none;
 }
 
 
