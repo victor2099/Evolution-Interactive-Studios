@@ -43,8 +43,8 @@
       href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/../css/homepage.css" />
     <link rel="stylesheet" href="/../css/other.css" />
+    <link rel="stylesheet" href="/../css/homepage.css" />
   </head>
 
   <body>
@@ -131,10 +131,17 @@
 
       <section class="disabled" id="homepage">
         <section class="studio_name">
-          <div class="hero_caption">
-            <h1>SURVIVE THE AWAKENING</h1>
-            <p>Join the fight against the Protocol Council</p>
-            <button><a href="#">Play Now</a></button>
+          <div class="slider">
+            <div class="slides">
+              <img src="../assets/protocol-img.png" alt="Slide 1">
+              <img src="../assets/protocol-img-2.png" alt="Slide 2">
+              <img src="../assets/protocol-img-3.png" alt="Slide 3">
+            </div>
+            <div class="hero_caption">
+              <h1>SURVIVE THE AWAKENING</h1>
+              <p>Join the fight against the Protocol Council</p>
+              <button><a href="#">Play Now</a></button>
+            </div>
           </div>
         </section>
 
@@ -294,7 +301,7 @@
               <h1>Privacy Policy</h1>
             </div>
             <p>Last updated: May 11, 2026</p>
-            <div>
+            <div id="privacy_content" class="privacy-content">
               <p>
                 This Privacy Policy describes Our policies and procedures on the
                 collection, use and disclosure of Your information when You use
@@ -945,7 +952,7 @@
       </section>
 
       <section class="disabled" id="ToC">
-        <main class="ToC-page">
+        <main class="ToC-page" id="ToC-page">
           <div class="privacy-panel">
             <div class="privacy-header">
               <h1>Terms and Conditions</h1>

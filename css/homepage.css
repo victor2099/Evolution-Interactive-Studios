@@ -189,12 +189,52 @@ a {
 
 /* studio name and description section */
 #homepage .studio_name {
-  background: url(/assets/poster.png) no-repeat center;
-  background-size: cover;
-	width: 100%;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   height: 700px;
 }
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 300%;
+    animation: slideAnimation 12s infinite;
+}
+
+.slides img {
+    width: 100%; 
+    height: 700px;
+    object-fit: cover;
+}
+
+@keyframes slideAnimation {
+
+    0%, 25% {
+        margin-left: 0%;
+    }
+    33%, 58% {
+        margin-left: -100%;
+    }
+    66%, 91% {
+        margin-left: -200%;
+    }
+    100% {
+        margin-left: 0%;
+    }
+}
+
 .hero_caption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
 	padding-left: 4rem;
 	padding-top: 6rem;
 	width: 35%;
@@ -316,7 +356,7 @@ margin-right: 4rem;
 
 .game_div {
 	padding: 1rem 1rem;
-	height: 16rem;
+	height: 22.5rem;
 	background-color: rgb(14, 19, 29);
 }
 
@@ -423,10 +463,8 @@ margin-right: 4rem;
 .connect_links {
 	padding-top: 2rem;
 	display: flex;
-	gap: 4rem;
+	gap: 2rem;
 	width: 100%;
-	padding-left: 3rem;
-	max-width: 50%;
 }
 
 .connect_link {
@@ -580,7 +618,7 @@ margin-right: 4rem;
 @media(min-width: 768px) and (max-width: 1024px) {
 /* footer style */
   .connect_section {
-		padding-left: 1rem;
+		padding: 2rem 2rem;
 	}
 
 	.connect_texts {
@@ -610,6 +648,26 @@ margin-right: 4rem;
 .games_display {
 	width: 95%;
 	margin-left: 1rem;
+}
+
+.slides img {
+    width: 40%;
+}
+
+@keyframes slideAnimation {
+
+    0%, 25% {
+        margin-left: 0%;
+    }
+    33%, 58% {
+        margin-left: -130%;
+    }
+    66%, 91% {
+        margin-left: -260%;
+    }
+    100% {
+        margin-left: 0%;
+    }
 }
 }
 
@@ -668,6 +726,26 @@ margin-right: 4rem;
 	margin-top: 2rem;
 	font-size: 1.25rem;
 	line-height: 2rem;
+}
+
+.slides img {
+    width: 40%;
+}
+
+@keyframes slideAnimation {
+
+    0%, 25% {
+        margin-left: 0%;
+    }
+    33%, 58% {
+        margin-left: -140%;
+    }
+    66%, 91% {
+        margin-left: -260%;
+    }
+    100% {
+        margin-left: 0%;
+    }
 }
 }
 
@@ -749,6 +827,26 @@ margin-right: 4rem;
 	height: 400px;
 }
 
+.slides img {
+    width: 40%;
+}
+
+@keyframes slideAnimation {
+
+    0%, 25% {
+        margin-left: 0%;
+    }
+    33%, 58% {
+        margin-left: -140%;
+    }
+    66%, 91% {
+        margin-left: -260%;
+    }
+    100% {
+        margin-left: 0%;
+    }
+}
+
 	/* footer section */
 	.connect_section {
 	padding: 2rem 0;
@@ -759,7 +857,7 @@ margin-right: 4rem;
 
 	.connect_section h2 {
 		font-size: 1.5rem;
-		padding-left: 4rem;
+		padding-left: 5rem;
 	}
 
 	.connect_row {
@@ -780,7 +878,7 @@ margin-right: 4rem;
 
 .connect_links {
 	display: flex;
-	gap: 3rem;
+	gap: 4rem;
 	width: 80%;
 	max-width: none;
 }
@@ -918,5 +1016,25 @@ margin-right: 4rem;
 .connect_link svg {
 	width: 1rem;
 	height: 1rem;
+}
+
+.slides img {
+    width: 40%;
+}
+
+@keyframes slideAnimation {
+
+    0%, 25% {
+        margin-left: 0%;
+    }
+    33%, 58% {
+        margin-left: -140%;
+    }
+    66%, 91% {
+        margin-left: -260%;
+    }
+    100% {
+        margin-left: 0%;
+    }
 }
 }
